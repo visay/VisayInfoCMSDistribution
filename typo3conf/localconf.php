@@ -3,14 +3,49 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TYPO3_CONF_VARS['SYS']['sitename'] = 'New TYPO3 site';
-
-	// Default password is "joh316" :
-$TYPO3_CONF_VARS['BE']['installToolPassword'] = 'bacb98acf97e0b6112b1d1b650b84971';
-
-$TYPO3_CONF_VARS['EXT']['extList'] = 'info,perm,func,filelist,extbase,fluid,about,version,tsconfig_help,context_help,extra_page_cm_options,impexp,sys_note,tstemplate,tstemplate_ceditor,tstemplate_info,tstemplate_objbrowser,tstemplate_analyzer,func_wizards,wizard_crpages,wizard_sortpages,lowlevel,install,belog,beuser,aboutmodules,setup,taskcenter,info_pagetsconfig,viewpage,rtehtmlarea,css_styled_content,t3skin,t3editor,reports,felogin,form';
-
 $typo_db_extTableDef_script = 'extTables.php';
+
+	// Include specific environment configuration
+@include(PATH_typo3conf . 'visayconf.php');
+
+///////////////////////////////////////////////////
+// After cloning the project from the repository,
+// you need to comment the @include line above and
+// enable the following commented lines to add your
+// own environment.
+///////////////////////////////////////////////////
+//
+// $typo_db_username = 'your_database_username';
+// $typo_db_password = 'your_database_password';
+// $typo_db_host = 'your_database_host'; // Example: 'localhost'
+// $typo_db = 'your_database_name';
+//
+// $TYPO3_CONF_VARS['SYS']['encryptionKey'] = '1573be58e47af894d59045dc4930dc4201309009b0a51ca1ccbe4ec773218140d75aea0bf496635364731ba44f2b6573';
+// $TYPO3_CONF_VARS['BE']['installToolPassword'] = '827ccb0eea8a706c4c34a16891f84e7b';
+//
+///////////////////////////////////////////////////
+
+	// System configuration
+$TYPO3_CONF_VARS['SYS']['compat_version'] = '4.7';
+
+	// Backend configuration
+$TYPO3_CONF_VARS['BE']['versionNumberInFilename'] = '0';
+$TYPO3_CONF_VARS['BE']['disable_exec_function'] = '0';
+$TYPO3_CONF_VARS['BE']['loginSecurityLevel']  = 'rsa';
+
+	// Frontend configuration
+$TYPO3_CONF_VARS['FE']['loginSecurityLevel']  = 'rsa';
+
+	// Image processing configuration
+$TYPO3_CONF_VARS['GFX']['gdlib_png'] = '1'; 
+$TYPO3_CONF_VARS['GFX']['im_version_5'] = 'gm';
+
+	// Loaded extensions
+$TYPO3_CONF_VARS['EXT']['extList'] = 'extbase,css_styled_content,info,perm,func,filelist,fluid,about,version,tsconfig_help,context_help,extra_page_cm_options,impexp,sys_note,tstemplate,tstemplate_ceditor,tstemplate_info,tstemplate_objbrowser,tstemplate_analyzer,func_wizards,wizard_crpages,wizard_sortpages,lowlevel,install,belog,beuser,aboutmodules,setup,taskcenter,info_pagetsconfig,viewpage,rtehtmlarea,t3skin,t3editor,reports,felogin,form,rsaauth,saltedpasswords,cshmanual,opendocs,recycler,scheduler,workspaces';
+$TYPO3_CONF_VARS['EXT']['extList_FE'] = 'extbase,css_styled_content,fluid,version,install,rtehtmlarea,t3skin,felogin,form,rsaauth,saltedpasswords,workspaces';
+
+	// Extension configuration
+$TYPO3_CONF_VARS['EXT']['extConf']['saltedpasswords'] = 'a:2:{s:3:"FE.";a:2:{s:7:"enabled";s:1:"1";s:21:"saltedPWHashingMethod";s:28:"tx_saltedpasswords_salts_md5";}s:3:"BE.";a:2:{s:7:"enabled";s:1:"1";s:21:"saltedPWHashingMethod";s:28:"tx_saltedpasswords_salts_md5";}}';
 
 ## INSTALL SCRIPT EDIT POINT TOKEN - all lines after this points may be changed by the install script!
 
