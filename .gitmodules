@@ -1,3 +1,6 @@
 [submodule "typo3_src"]
 	path = typo3_src
 	url = git://git.typo3.org/TYPO3v4/Core.git
+[submodule "fileadmin/twitter-bootstrap"]
+	path = fileadmin/twitter-bootstrap
+	url = git@github.com:visay/twitter-bootstrap.git
