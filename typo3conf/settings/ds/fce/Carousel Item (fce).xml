@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+	<meta type="array">
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT type="array">
+		<tx_templavoila type="array">
+			<title>ROOT</title>
+			<description>Select the HTML element on the page which you want to be the overall container element for the template.</description>
+		</tx_templavoila>
+		<type>array</type>
+		<el type="array">
+			<field_image type="array">
+				<tx_templavoila type="array">
+					<title>Image</title>
+					<sample_data type="array">
+						<numIndex index="0"></numIndex>
+					</sample_data>
+					<eType>image</eType>
+					<TypoScript>
+						<![CDATA[
+							10 = RECORDS
+							10.source.current = 1
+							10.dontCheckPid = 1
+							10.tables = tx_dam
+							10.conf.tx_dam = IMG_RESOURCE
+							10.conf.tx_dam {
+								file { 
+									import.dataWrap = {field:file_path}|{field:file_name}
+									maxW = 976
+								}
+								stdWrap.wrap = <img alt="" src="|" />
+							}
+						]]>
+					</TypoScript>
+					<preview></preview>
+				</tx_templavoila>
+				<TCEforms type="array">
+					<label>Image</label>
+					<config type="array">
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<max_size>1000</max_size>
+						<show_thumbs>1</show_thumbs>
+						<size>1</size>
+						<maxitems>1</maxitems>
+						<minitems>1</minitems>
+					</config>
+				</TCEforms>
+			</field_image>
+			<field_caption type="array">
+				<tx_templavoila type="array">
+					<title>Caption</title>
+					<sample_data type="array">
+						<numIndex index="0"></numIndex>
+					</sample_data>
+					<eType>none</eType>
+					<TypoScript>
+						<![CDATA[
+							10 = TEXT
+							10.data = register:tx_templavoila_pi1.parentRec.header
+							10.wrap = <h4>|</h4>
+							10.required = 1
+						]]>
+					</TypoScript>
+					<proc type="array">
+						<int>0</int>
+						<HSC>0</HSC>
+						<stdWrap></stdWrap>
+					</proc>
+					<preview></preview>
+				</tx_templavoila>
+			</field_caption>
+			<field_description type="array">
+				<tx_templavoila type="array">
+					<title>Description</title>
+					<sample_data type="array">
+						<numIndex index="0"></numIndex>
+					</sample_data>
+					<eType>none</eType>
+					<TypoScript>
+						<![CDATA[
+							10 = TEXT
+							10.data = register:tx_templavoila_pi1.parentRec.subheader
+							10.wrap = <p>|</p>
+							10.required = 1
+						]]>
+					</TypoScript>
+					<proc type="array">
+						<int>0</int>
+						<HSC>0</HSC>
+						<stdWrap></stdWrap>
+					</proc>
+					<preview></preview>
+				</tx_templavoila>
+			</field_description>
+		</el>
+	</ROOT>
+</T3DataStructure>

@@ -7,3 +7,15 @@
 [submodule "typo3conf/ext/templavoila"]
 	path = typo3conf/ext/templavoila
 	url = git://git.typo3.org/TYPO3v4/Extensions/templavoila.git
+[submodule "typo3conf/ext/dam"]
+	path = typo3conf/ext/dam
+	url = git://git.typo3.org/TYPO3v4/Extensions/dam.git
+[submodule "typo3conf/ext/dam_catedit"]
+	path = typo3conf/ext/dam_catedit
+	url = git://git.typo3.org/TYPO3v4/Extensions/dam_catedit.git
+[submodule "typo3conf/ext/dam_index"]
+	path = typo3conf/ext/dam_index
+	url = git://git.typo3.org/TYPO3v4/Extensions/dam_index.git
+[submodule "typo3conf/ext/dam_ttcontent"]
+	path = typo3conf/ext/dam_ttcontent
+	url = git://git.typo3.org/TYPO3v4/Extensions/dam_ttcontent.git
