@@ -19,3 +19,6 @@
 [submodule "typo3conf/ext/realurl"]
 	path = typo3conf/ext/realurl
 	url = git://git.typo3.org/TYPO3v4/Extensions/realurl.git
+[submodule "fileadmin/templates/bootstrap"]
+	path = fileadmin/templates/bootstrap
+	url = git://github.com/twitter/bootstrap.git
