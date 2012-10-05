@@ -16,3 +16,6 @@
 [submodule "typo3conf/ext/dam_ttcontent"]
 	path = typo3conf/ext/dam_ttcontent
 	url = git://git.typo3.org/TYPO3v4/Extensions/dam_ttcontent.git
+[submodule "typo3conf/ext/realurl"]
+	path = typo3conf/ext/realurl
+	url = git://git.typo3.org/TYPO3v4/Extensions/realurl.git

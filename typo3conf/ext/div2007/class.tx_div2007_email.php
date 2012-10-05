@@ -29,7 +29,7 @@
  *
  * email functions
  *
- * $Id: class.tx_div2007_email.php 123 2012-04-20 19:51:44Z franzholz $
+ * $Id: class.tx_div2007_email.php 151 2012-08-16 12:11:25Z franzholz $
  *
  * @author  Franz Holzinger <franz@ttproducts.de>
  * @maintainer	Franz Holzinger <franz@ttproducts.de>
@@ -251,7 +251,7 @@ class tx_div2007_email {
 			is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$extKey][$hookVar])
 		) {
 			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$extKey][$hookVar] as $classRef) {
-				$hookObj= &t3lib_div::getUserObj($classRef);
+				$hookObj= t3lib_div::getUserObj($classRef);
 				if (method_exists($hookObj, 'init')) {
 					$hookObj->init($mail);
 				}

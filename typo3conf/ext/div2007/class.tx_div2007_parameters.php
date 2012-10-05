@@ -28,7 +28,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2011 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_parameters.php 82 2011-07-19 15:04:37Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_parameters.php 151 2012-08-16 12:11:25Z franzholz $
  * @since      0.1
  */
 
@@ -76,7 +76,7 @@ class tx_div2007_parameters extends tx_div2007_object {
 		for($this->rewind(); $this->valid(); $this->next()){
 			if(!is_array($this->current())) {  // TODO: use also arrays
 				$out .= sprintf('%s<input type="hidden" name="%s[%s]" value="%s">', chr(10),
-						$this->getDesignator(), $this->key(), htmlspecialchars($this->current()));
+					$this->getDesignator(), $this->key(), htmlspecialchars($this->current()));
 			}
 		}
 		return $out;

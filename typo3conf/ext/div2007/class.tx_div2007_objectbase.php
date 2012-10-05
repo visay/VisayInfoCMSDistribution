@@ -53,7 +53,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2007 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_objectbase.php 127 2012-04-22 17:54:57Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_objectbase.php 151 2012-08-16 12:11:25Z franzholz $
  * @since      0.1
  */
 
@@ -96,12 +96,12 @@ class tx_div2007_objectBase extends tx_div2007_selfAwareness {
 			$this->preset();
 		}
 		if(is_object($parameter1) && is_subclass_of($parameter1, 'tx_div2007_controller')) {
-			$this->controller = &$parameter1;
+			$this->controller = $parameter1;
 		} elseif(isset($parameter1)) {
 			$this->overwriteArray($parameter1);
 		}
 		if(is_object($parameter2) && is_subclass_of($parameter2, 'tx_div2007_controller')) {
-			$this->controller = &$parameter2;
+			$this->controller = $parameter2;
 		} elseif(isset($parameter2)) {
 			$this->overwriteArray($parameter2);
 		}

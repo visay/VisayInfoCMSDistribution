@@ -51,7 +51,7 @@ class tx_div2007_hooks_cms {
 	 * @return	  string
 	 */
 
-	public function pmDrawItem (&$params, &$pObj) {
+	public function pmDrawItem (&$params, $pObj) {
 
 		if (t3lib_extMgm::isLoaded($this->extKey) &&
 			in_array(
@@ -59,7 +59,7 @@ class tx_div2007_hooks_cms {
 			) &&
 			$params['row']['pi_flexform'] != ''
 		) {
-			include_once (PATH_BE_div2007.'class.tx_div2007_ff.php');
+			include_once (PATH_BE_div2007 . 'class.tx_div2007_ff.php');
 
 			tx_div2007_ff::load(
 				$params['row']['pi_flexform'],

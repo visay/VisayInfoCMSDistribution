@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 Kasper Skaarhoj (kasperYYYY@typo3.com)
+*  (c) 2012 Kasper Skaarhoj (kasperYYYY@typo3.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -27,7 +27,7 @@
 /**
  * Contains classes for Content Rendering based on TypoScript Template configuration
  *
- * $Id: class.tx_div2007_cobj.php 74 2011-04-23 08:58:40Z franzholz $
+ * $Id: class.tx_div2007_cobj.php 151 2012-08-16 12:11:25Z franzholz $
  *
  * class tslib_cObj	All main TypoScript features, rendering of content objects (cObjects). This class is the backbone of TypoScript Template rendering.
  *
@@ -36,8 +36,6 @@
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
  * @author	Franz Holzinger <franz@ttproducts.de>
  */
-
-require_once(PATH_tslib . 'class.tslib_content.php');
 
 
 class tx_div2007_cobj extends tslib_cObj {

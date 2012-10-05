@@ -36,7 +36,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2011 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007.php 128 2012-04-27 14:15:43Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007.php 151 2012-08-16 12:11:25Z franzholz $
  * @since      0.1
  */
 
@@ -173,7 +173,7 @@ class tx_div2007 {
 	 * @param	string		subdirectory
 	 * @return	void
 	 */
-	public function autoLoadAll ($extensionKey, $subdirectory = '', $pregFileNamePattern='/^class[.]tx_(.*)[.]php$/') {
+	public function autoLoadAll ($extensionKey, $subdirectory = '', $pregFileNamePattern = '/^class[.]tx_(.*)[.]php$/') {
 		// Format subdirectory first to '.../' or ''
 		preg_match('/^\/?(.*)\/?$/', $subdirectory, $matches);
 		$subdirectory = strlen($matches[1]) ? $matches[1] . '/' : '';
@@ -207,8 +207,9 @@ class tx_div2007 {
 	 * @see    session()
 	 */
 	static public function browserSession ($key, $value = NULL) {
-		if($value != NULL)
+		if($value != NULL) {
 			$GLOBALS['TSFE']->fe_user->setKey('ses', $key, $value);
+		}
 		return $GLOBALS['TSFE']->fe_user->getKey('ses', $key);
 	}
 
@@ -548,7 +549,7 @@ class tx_div2007 {
 	 */
 	public function resolvePathWithExtPrefix ($path) {
 		if(substr($path, 0, 4) == 'EXT:') {
-			list($extKey, $local) = explode('/', substr($path,4),2);
+			list($extKey, $local) = explode('/', substr($path, 4), 2);
 			if(t3lib_extMgm::isLoaded($extKey)) {
 				$path = self::getSiteRelativeExtensionPath($extKey) . $local;
 			}

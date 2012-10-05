@@ -28,7 +28,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2011 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_configurations.php 82 2011-07-19 15:04:37Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_configurations.php 151 2012-08-16 12:11:25Z franzholz $
  * @since      0.1
  */
 
@@ -80,8 +80,12 @@ class tx_div2007_configurations extends tx_div2007_object {
 	 * @return	void
 	 */
 	function setTypoScriptConfiguration ($configuration) {
-		if(is_array($configuration['configurations.']))  $configuration = $configuration['configurations.'];
-		foreach((array)$configuration as $key => $value) $this->set($key, $value);
+		if(is_array($configuration['configurations.'])) {
+			$configuration = $configuration['configurations.'];
+		}
+		foreach((array)$configuration as $key => $value) {
+			$this->set($key, $value);
+		}
 	}
 
 	/**

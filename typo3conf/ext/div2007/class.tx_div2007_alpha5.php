@@ -40,7 +40,7 @@
  * @author     Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha5.php 120 2012-04-19 09:01:02Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha5.php 154 2012-09-26 19:03:34Z franzholz $
  * @since      0.1
  */
 
@@ -77,7 +77,7 @@ class tx_div2007_alpha5 {
 	 *
 	 */
 	static public function getSetupOrFFvalue_fh002 (
-		&$cObj,
+		$cObj,
 		$code,
 		$codeExt,
 		$defaultCode,
@@ -132,8 +132,19 @@ class tx_div2007_alpha5 {
 		global $TCA, $TYPO3_DB;
 
 		$result = array();
-		if ($fieldname != '') {
+		if (
+			$tablename != '' &&
+			$fieldname != '' &&
+			isset($TCA[$tablename]['columns'][$fieldname]) &&
+			isset($TCA[$tablename]['columns'][$fieldname]['config'])
+		) {
 			$tableConf = $TCA[$tablename]['columns'][$fieldname]['config'];
+			$LocalFieldname = '';
+			$foreignFieldname = '';
+			$foreignTable = '';
+			$mmTablename = '';
+			$mmTableConf = '';
+
 			$type = $tableConf['type'];
 			if ($type == 'group') {
 				$type = 'select';
@@ -148,9 +159,11 @@ class tx_div2007_alpha5 {
 				$foreignFieldname = 'uid_foreign';
 			}
 
-			$mmTableConf = $TCA[$mmTablename]['columns'][$foreignFieldname]['config'];
+			if ($foreignFieldname != '') {
+				$mmTableConf = $TCA[$mmTablename]['columns'][$foreignFieldname]['config'];
+			}
 
-			if ($type == 'inline') {
+			if ($type == 'inline' && is_array($mmTableConf)) {
 				$foreignTable = $mmTableConf['foreign_table'];
 			} else if ($type == 'select') {
 				$foreignTable = $tableConf['foreign_table'];
@@ -226,7 +239,7 @@ class tx_div2007_alpha5 {
 	 * @return	string		A "class" attribute with value and a single space char before it.
 	 * @see pi_classParam()
 	 */
-	static public function classParam_fh001 ($class, $addClasses='', $prefixId='') {
+	static public function classParam_fh001 ($class, $addClasses = '', $prefixId = '') {
 		$output = '';
 		foreach (t3lib_div::trimExplode(',',$class) as $v) {
 			$output .= ' ' . self::getClassName_fh001($v, $prefixId);
@@ -409,6 +422,64 @@ class tx_div2007_alpha5 {
 	}
 
 
+
+	/**
+	 * Get URL to some page.
+	 * Returns the URL to page $id with $target and an array of additional url-parameters, $urlParameters
+	 * Simple example: $this->pi_getPageLink(123) to get the URL for page-id 123.
+	 *
+	 * The function basically calls $cObj->getTypoLink_URL()
+	 *
+	 * @param	object		cObject
+	 * @param	integer		Page id
+	 * @param	string		Target value to use. Affects the &type-value of the URL, defaults to current.
+	 * @param	array		Additional URL parameters to set (key/value pairs)
+	 * @param	array		Configuration
+	 * @return	string		The resulting URL
+	 * @see pi_linkToPage()
+	 */
+	static public function getPageLink_fh003 (
+		$cObj,
+		$id,
+		$target = '',
+		$urlParameters = array(),
+		$conf = array()
+	) {
+		$result = self::getTypoLink_URL_fh003(
+			$cObj,
+			$id,
+			$urlParameters,
+			$target,
+			$conf
+		);
+		return $result;
+	}
+
+
+	/**
+	 * Link a string to some page.
+	 * Like pi_getPageLink() but takes a string as first parameter which will in turn be wrapped with the URL including target attribute
+	 * Simple example: $this->pi_linkToPage('My link', 123) to get something like <a href="index.php?id=123&type=1">My link</a> (or <a href="123.1.html">My link</a> if simulateStaticDocuments is set)
+	 *
+	 * @param	object		cObject
+	 * @param	string		The content string to wrap in <a> tags
+	 * @param	integer		Page id
+	 * @param	string		Target value to use. Affects the &type-value of the URL, defaults to current.
+	 * @param	array		Additional URL parameters to set (key/value pairs)
+	 * @return	string		The input string wrapped in <a> tags with the URL and target set.
+	 * @see pi_getPageLink(), tslib_cObj::getTypoLink()
+	 */
+	static public function linkToPage_fh001(
+		$cObj,
+		$str,
+		$id,
+		$target = '',
+		$urlParameters = array()
+	) {
+		return $cObj->getTypoLink($str, $id, $urlParameters, $target);
+	}
+
+
 	/**
 	 * Returns the localized label of the LOCAL_LANG key, $key used since TYPO3 4.6
 	 * Notice that for debugging purposes prefixes for the output values can be set with the internal vars ->LLtestPrefixAlt and ->LLtestPrefix
@@ -421,7 +492,7 @@ class tx_div2007_alpha5 {
 	 * @return	string		The value from LOCAL_LANG.
 	 */
 	static public function getLL_fh002 (
-		&$langObj,
+		$langObj,
 		$key,
 		&$usedLang = '',
 		$alternativeLabel = '',
@@ -508,7 +579,7 @@ class tx_div2007_alpha5 {
 	 * @return	void
 	 */
 	static public function loadLL_fh002 (
-		&$langObj,
+		$langObj,
 		$langFileParam = '',
 		$overwrite = TRUE
 	) {
@@ -567,6 +638,7 @@ class tx_div2007_alpha5 {
 			}
 
 				// Overlaying labels from TypoScript (including fictitious language keys for non-system languages!):
+
 			$confLL = $langObj->conf['_LOCAL_LANG.'];
 
 			if (is_array($confLL)) {
@@ -1180,6 +1252,43 @@ class tx_div2007_alpha5 {
 	}
 
 
+	static public function fixImageCodeAbsRefPrefix_fh001 (&$imageCode, $domain = '') {
+		$absRefPrefix = '';
+		$absRefPrefixDomain = '';
+		$bSetAbsRefPrefix = FALSE;
+		if ($GLOBALS['TSFE']->absRefPrefix != '') {
+			$absRefPrefix = $GLOBALS['TSFE']->absRefPrefix;
+		} else {
+			$bSetAbsRefPrefix = TRUE;
+			$absRefPrefix = t3lib_div::getIndpEnv('TYPO3_SITE_URL');
+		}
+
+		if ($domain != '') {
+			$absRefPrefixArray = explode('?', $absRefPrefix);
+			$protocollArray = explode('//', $absRefPrefixArray['0']);
+			$absRefPrefixArray['0'] = $protocollArray['0'] . '//' . $domain;
+			$absRefPrefixDomain = implode('?', $absRefPrefixArray);
+		}
+
+		if ($bSetAbsRefPrefix) {
+			if ($absRefPrefixDomain != '') {
+				$absRefPrefix = $absRefPrefixDomain . '/';
+			}
+			$fixImgCode = str_replace('index.php', $absRefPrefix . 'index.php', $imageCode);
+			$fixImgCode = str_replace('src="', 'src="' . $absRefPrefix, $fixImgCode);
+			$fixImgCode = str_replace('"uploads/', '"' . $absRefPrefix . 'uploads/', $fixImgCode);
+			$imageCode = $fixImgCode;
+		} else {
+			if ($absRefPrefixDomain != '') {
+				$fixImgCode = str_replace($absRefPrefix . 'index.php', $absRefPrefixDomain . 'index.php', $imageCode);
+				$fixImgCode = str_replace('src="' . $absRefPrefix, 'src="' . $absRefPrefixDomain, $fixImgCode);
+				$fixImgCode = str_replace('"' . $absRefPrefix . 'uploads/', '"' . $absRefPrefixDomain . 'uploads/', $fixImgCode);
+				$imageCode = $fixImgCode;
+			}
+		}
+	}
+
+
 	/**
 	 * Wrap content with the plugin code
 	 * wraps the content of the plugin before the final output
@@ -1197,23 +1306,22 @@ class tx_div2007_alpha5 {
 		$prefixId,
 		$uid
 	) {
-		$rc = '';
-
 		$idNumber = str_replace('_', '-', $prefixId . '-' . strtolower($theCode));
 		$classname = $idNumber;
 		if ($uid != '') {
 			$idNumber .= '-' . $uid;
 		}
-		$rc ='<!-- START: ' . $idNumber . ' --><div id="' . $idNumber . '" class="' . $classname . '" >' .
+
+		$result = '<!-- START: ' . $idNumber . ' --><div id="' . $idNumber . '" class="' . $classname . '" >' .
 			($content != '' ? $content : '') . '</div><!-- END: ' . $idNumber . ' -->';
 
-		return $rc;
+		return $result;
 	}
 }
-
 
 
 if (defined('TYPO3_MODE') && $GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/div2007/class.tx_div2007_alpha5.php']) {
 	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/div2007/class.tx_div2007_alpha5.php']);
 }
+
 ?>
