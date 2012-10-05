@@ -4,6 +4,7 @@
 /typo3conf/visayconf.php
 /typo3conf/realurl_autoconf.php
 /typo3temp/*
+/fileadmin/user_upload/*
 *~
 .buildpath
 .settings
