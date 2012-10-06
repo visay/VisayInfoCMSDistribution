@@ -38,6 +38,9 @@ $TYPO3_CONF_VARS['BE']['loginSecurityLevel']  = 'rsa';
 	// Frontend configuration
 $TYPO3_CONF_VARS['FE']['loginSecurityLevel']  = 'rsa';
 $TYPO3_CONF_VARS['FE']['lifetime'] = '3600';
+$TYPO3_CONF_VARS['FE']['pageNotFound_handling'] = '1';
+$TYPO3_CONF_VARS['FE']['pageNotFound_handling_statheader'] = 'HTTP/1.1 404 Not Found';
+$TYPO3_CONF_VARS['FE']['pageNotFound_handling'] = '/error-404/';
 
 	// Image processing configuration
 $TYPO3_CONF_VARS['GFX']['gdlib_png'] = '1'; 
