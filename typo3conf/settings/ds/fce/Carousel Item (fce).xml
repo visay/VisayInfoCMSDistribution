@@ -27,7 +27,7 @@
 							10.conf.tx_dam {
 								file { 
 									import.dataWrap = {field:file_path}|{field:file_name}
-									maxW = 976
+									maxW = 1150
 								}
 								stdWrap.wrap = <img alt="" src="|" />
 							}
