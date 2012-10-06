@@ -51,6 +51,7 @@ config {
 		// Protect mail addresses from spamming
 	spamProtectEmailAddresses = -3 
 	spamProtectEmailAddresses_atSubst = @<span style="display:none;">remove-this.</span>
+
 	headerComment =  TYPO3 Implementation by Visay Keo <keo@visay.info>
 }
 
@@ -103,13 +104,13 @@ page.headerData.20.value (
 )
 
 # Description
-page.meta.description = ###CHANGEME###
+page.meta.description = Personal information about me <Visay Keo>, my recent activities and tips/tricks I often need but always forget. I hope this can also help others working in similar area of TYPO3, Web Development and Project Management. 
 page.meta.description {
 	override.field = description
 }
 
 # Keywords
-page.meta.keywords = ###CHANGEME###
+page.meta.keywords = visay, keo, visay keo, typo3, typoscript, flow, typo3flow, extbase, fluid, neos, php, database, web server, web, web development, developer, web developer, project manager, project management, cambodia, khmer, typo3 cambodia, ktug, typo3 usergroup, khmer typo3 usergroup
 page.meta.keywords {
 	stdWrap.case = lower
 	override.field = keywords
@@ -247,7 +248,7 @@ lib.accountMenu {
 						ATagTitle.field = title // nav_title
 						stdWrap.htmlSpecialChars = 1
 						wrapItemAndSub = <li>|</li>
-						stdWrap.typolink.parameter = 18
+						stdWrap.typolink.parameter = 13
 						stdWrap.typolink.additionalParams.dataWrap = &logintype=logout&pid=19
 						accessKey = 1
 						doNotLinkIt = 1
