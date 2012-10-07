@@ -124,6 +124,10 @@ RewriteCond %{REQUEST_FILENAME} !-l
 # RewriteRule .* /TYPO3root/index.php [L]
 RewriteRule .* index.php [L]
 
+# Redirect from www to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^/(.*)$ http://%1/$RewriteRule1 [R=301,L]
+
 </IfModule>
 
 ### End: Settings for mod_rewrite ###
