@@ -1,3 +1,5 @@
+tt_content.stdWrap.innerWrap >
+
 config {
 	extTarget =
 
@@ -42,8 +44,8 @@ config {
 	disablePrefixComment = 1
 
 		// CSS and JS 
-	removeDefaultJS = 1
-	inlineStyle2TempFile = 0
+	removeDefaultJS = external
+	inlineStyle2TempFile = 1
 	moveJsFromHeaderToFooter = 1
 
 	noPageTitle = 2
