@@ -5,19 +5,19 @@ page.includeCSS {
 	file10.title = Standard Web Fonts
 	file10.media = all
 	
-	file20 = fileadmin/templates/css/bootstrap.css
+	file20 = fileadmin/templates/styles/bootstrap.css
 	file20.title = Twitter Bootstrap CSS
 	file20.media = screen
 	
-	file30 = fileadmin/templates/css/responsive.css
+	file30 = fileadmin/templates/styles/responsive.css
 	file30.title = Twitter Bootstrap Responsive CSS
 	file30.media = screen
 	
-	file40 = fileadmin/templates/css/prettify.css
+	file40 = fileadmin/templates/styles/prettify.css
 	file40.title = Google Prettify CSS
 	file40.media = screen
 	
-	file50 = fileadmin/templates/css/visay-info.css
+	file50 = fileadmin/templates/styles/visay-info.css
 	file50.title = Customized CSS
 	file50.media = screen
 }
