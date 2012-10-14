@@ -23,6 +23,7 @@ config {
 	sendCacheHeaders = 1
 
 		// URL Settings
+	baseURL = {$constant.baseURL}
 	tx_realurl_enable = 1
 	simulateStaticDocuments = 0
 	linkVars = L(1)
