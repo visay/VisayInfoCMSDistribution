@@ -25,6 +25,10 @@ lib.topMenu {
 	}
 }
 
+[globalVar = TSFE:id = 2]
+	lib.topMenu.alwaysActivePIDlist = 5
+[end]
+
 lib.accountMenu = COA_INT
 lib.accountMenu {
 	10 = HMENU
