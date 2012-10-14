@@ -16,6 +16,24 @@ page.includeCSS {
 	file5 = fileadmin/templates/styles/visay-info.css
 }
 
+page.includeJSFooterlibs {
+	jquery = http://code.jquery.com/jquery-1.8.2.min.js
+	jquery.external = 1
+	jquery.forceOnTop = 1
+#	jquery.disableCompression = 1
+#	jquery.excludeFromConcatenation = 1
+
+	transition = fileadmin/templates/bootstrap/js/bootstrap-transition.js
+	dropdown = fileadmin/templates/bootstrap/js/bootstrap-dropdown.js
+	carousel = fileadmin/templates/bootstrap/js/bootstrap-carousel.js
+	collapse = fileadmin/templates/bootstrap/js/bootstrap-collapse.js
+	prettifier = fileadmin/templates/scripts/prettify.js
+}
+
+page.includeJSFooter {
+	file1 = fileadmin/templates/scripts/visay-info.js
+}
+
 page.headerData.10 = TEXT
 page.headerData.10.value (
 	<style type="text/css">

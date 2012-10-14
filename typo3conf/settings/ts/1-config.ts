@@ -47,6 +47,10 @@ config {
 	removeDefaultJS = external
 	inlineStyle2TempFile = 1
 	moveJsFromHeaderToFooter = 1
+	compressCss = 1
+	compressJs = 1
+	concatenateCss = 1
+	concatenateJs = 1
 
 	noPageTitle = 2
 

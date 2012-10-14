@@ -1,4 +1,5 @@
 <?php
+
 if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
@@ -55,6 +56,8 @@ $TYPO3_CONF_VARS['BE']['disable_exec_function'] = '0';
 $TYPO3_CONF_VARS['BE']['loginSecurityLevel']  = 'rsa';
 $TYPO3_CONF_VARS['BE']['compactFlexFormXML'] = '1';
 $TYPO3_CONF_VARS['BE']['flexformForceCDATA'] = '1';
+$TYPO3_CONF_VARS['BE']['versionNumberInFilename'] = '1';
+$TYPO3_CONF_VARS['BE']['compressionLevel'] = '9';
 
 	// Frontend configuration
 $TYPO3_CONF_VARS['FE']['loginSecurityLevel']  = 'rsa';
@@ -64,6 +67,8 @@ $TYPO3_CONF_VARS['FE']['pageNotFound_handling_statheader'] = 'HTTP/1.1 404 Not F
 $TYPO3_CONF_VARS['FE']['pageNotFound_handling'] = '/error-404/';
 $TYPO3_CONF_VARS['FE']['hidePagesIfNotTranslatedByDefault'] = '1';
 $TYPO3_CONF_VARS['FE']['disableNoCacheParameter'] = '1';
+$TYPO3_CONF_VARS['FE']['versionNumberInFilename'] = 'embed';
+$TYPO3_CONF_VARS['FE']['compressionLevel'] = '9';
 
 	// Image processing configuration
 $TYPO3_CONF_VARS['GFX']['gdlib_png'] = '1'; 
