@@ -83,10 +83,10 @@ AddEncoding gzip .gzip
 	# Change this path, if your TYPO3 installation is located in a subdirectory of the website root.
 	#RewriteBase /
 
-	# Redirect from www to non-www
-	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-	RewriteRule ^/(.*)$ http://%1/$1 [R=301,L]
-	
+	# Redirect from non-www to www
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
 	# Rule for versioned static files, configured through:
 	# - $TYPO3_CONF_VARS['BE']['versionNumberInFilename']
 	# - $TYPO3_CONF_VARS['FE']['versionNumberInFilename']
