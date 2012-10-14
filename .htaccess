@@ -113,10 +113,6 @@ AddEncoding gzip .gzip
 	# RewriteRule ^/TYPO3root/typo3$ /TYPO3root/typo3/index.php [L]
 	RewriteRule ^typo3$ typo3/index_re.php [L]
 	
-	# Redirect from www to non-www
-	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-	RewriteRule ^/(.*)$ http://%1/$RewriteRule1 [R=301,L]
-	
 	# If the file/symlink/directory does not exist => Redirect to index.php.
 	# For httpd.conf, you need to prefix each '%{REQUEST_FILENAME}' with '%{DOCUMENT_ROOT}'.
 	RewriteCond %{REQUEST_FILENAME} !-f
@@ -127,6 +123,10 @@ AddEncoding gzip .gzip
 	# For httpd.conf, use this line instead of the next one:
 	# RewriteRule .* /TYPO3root/index.php [L]
 	RewriteRule .* index.php [L]
+
+	## Redirect from non-www to www
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
 </IfModule>
 
