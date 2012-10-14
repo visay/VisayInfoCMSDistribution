@@ -9,10 +9,3 @@ plugin.tx_srfeuserregister_pi1.loginPID = 13
 plugin.tx_srfeuserregister_pi1.pid = 19
 plugin.tx_srfeuserregister_pi1.userGroupUponRegistration = 1
 plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation = 2
-
-	// Base URL settings
-constant.baseURL = http://www.visay.info/
-
-[globalVar = IENV:HTTP_HOST = www.local.visay.info]
-	constant.baseURL = http://www.local.visay.info/
-[end]
