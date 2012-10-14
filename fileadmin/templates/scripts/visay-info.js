@@ -1,13 +1,4 @@
-!function ($) {
+// (c) 2012 Keo Visay
 
-  $(function(){
-  	
-    // make code pretty
-    window.prettyPrint && prettyPrint()
-
-    // carousel demo
-    $('#myCarousel').carousel()
-    
-  })
-
-}(window.jQuery)
+!function($){$(function(){window.prettyPrint&&prettyPrint()
+$('#myCarousel').carousel()})}(window.jQuery)
