@@ -17,7 +17,7 @@ page.includeCSS {
 }
 
 page.includeJSFooterlibs {
-	jquery = http://code.jquery.com/jquery-1.8.2.min.js
+	jquery = http://code.jquery.com/jquery-1.7.2.min.js
 	jquery.external = 1
 	jquery.forceOnTop = 1
 #	jquery.disableCompression = 1
@@ -61,7 +61,7 @@ page.headerData.10.value (
 	# Create custom title
 page.headerData.20 = TEXT
 page.headerData.20 {
-	field = title
+	field = subtitle // title
 	noTrimWrap = |<title>| - Keo Visay</title>|
 	stdWrap.htmlSpecialChars = 1
 }
