@@ -31,8 +31,6 @@ lib.topMenu {
 
 lib.accountMenu = COA_INT
 lib.accountMenu {
-	wrap = <ul class="nav pull-right"><li class="dropdown">|</li></ul>
-
 	10 = HMENU
 	10 {
 		special = list
@@ -45,7 +43,7 @@ lib.accountMenu {
 			NO {
 				ATagTitle.field = title // nav_title
 				stdWrap.htmlSpecialChars = 1
-				wrapItemAndSub = <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" id="account"><i class="icon-user"></i>&nbsp;|&nbsp;<b class="caret"></b></a>
+				wrapItemAndSub = <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i>&nbsp;|&nbsp;<span class="caret"></span></a>
 				accessKey = 1
 				doNotLinkIt = 1
 			}
@@ -54,7 +52,7 @@ lib.accountMenu {
 
 	20 = COA
 	20 {
-		wrap = <ul aria-labelledby="account" class="dropdown-menu" role="menu">|</ul>
+		wrap = <ul class="dropdown-menu">|</ul>
 
 		10 = HMENU
 		10 {
@@ -70,7 +68,6 @@ lib.accountMenu {
 					ATagTitle.field = title // nav_title
 					stdWrap.htmlSpecialChars = 1
 					wrapItemAndSub = <li>|</li>
-					ATagParams = tabindex="-1"
 					accessKey = 1
 				}
 
@@ -97,7 +94,7 @@ lib.accountMenu {
 			20.wrap = &nbsp;|
 			20.required = 1
 	
-			stdWrap.wrap = <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" id="account"><i class="icon-user icon-white"></i>&nbsp;|&nbsp;<b class="caret"></b></a>
+			stdWrap.wrap = <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white"></i>&nbsp;|&nbsp;<span class="caret"></span></a>
 			stdWrap.required = 1
 		}
 	
@@ -118,7 +115,6 @@ lib.accountMenu {
 						ATagTitle.field = title // nav_title
 						stdWrap.htmlSpecialChars = 1
 						wrapItemAndSub = <li>|</li>
-						ATagParams = tabindex="-1"
 						stdWrap.typolink.parameter = 13
 						stdWrap.typolink.additionalParams.dataWrap = &logintype=logout&pid=19
 						accessKey = 1

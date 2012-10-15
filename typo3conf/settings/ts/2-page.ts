@@ -17,14 +17,14 @@ page.includeCSS {
 }
 
 page.includeJSFooterlibs {
-	jquery = http://code.jquery.com/jquery-1.8.1.min.js
+	jquery = http://code.jquery.com/jquery-1.8.2.min.js
 	jquery.external = 1
 	jquery.forceOnTop = 1
 #	jquery.disableCompression = 1
 #	jquery.excludeFromConcatenation = 1
 
 	transition = fileadmin/templates/bootstrap/js/bootstrap-transition.js
-	dropdown = fileadmin/templates/bootstrap/js/bootstrap-dropdown.js
+	dropdown = fileadmin/templates/scripts/bootstrap-dropdown.js
 	carousel = fileadmin/templates/bootstrap/js/bootstrap-carousel.js
 	collapse = fileadmin/templates/bootstrap/js/bootstrap-collapse.js
 	prettifier = fileadmin/templates/scripts/prettify.js

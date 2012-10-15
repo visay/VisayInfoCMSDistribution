@@ -1,12 +1,3 @@
-!function($) {
-	$(function(){
-			// dropdown
-		$('.dropdown-toggle').dropdown();
-	})
-}(window.jQuery);
-
-// --------------
-
 !function ($) {
 	$(function(){
 			// make code pretty
