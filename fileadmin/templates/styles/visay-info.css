@@ -1,4 +1,4 @@
-@media (max-width:979px){body{padding-top:0 !important;padding-bottom:0 !important;}}body{font-family:'Open Sans',sans-serif;color:#515151;}
+@media (max-width:979px){body{padding-top:0 !important;padding-bottom:0 !important;} .hero-unit h1{font-size:40px;} .hero-unit p{font-size:16px;}}body{font-family:'Open Sans',sans-serif;color:#515151;}
 h1,h2,h3,h4,h5,h6,a{font-family:'Nova Slim',cursive;color:#e56508;}
 a:hover{color:#e56508;}
 footer{font-size:12px;}
