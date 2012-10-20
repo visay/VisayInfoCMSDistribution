@@ -6,6 +6,7 @@
 /typo3temp/*
 /fileadmin/user_upload/*
 *~
+typo3_src
 .buildpath
 .settings
 .project
