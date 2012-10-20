@@ -94,6 +94,7 @@ $TYPO3_CONF_VARS['EXT']['extConf']['news'] = 'a:10:{s:29:"removeListActionFromFl
 
 	// Install tool wizard settings
 $TYPO3_CONF_VARS['INSTALL']['wizardDone']['tx_coreupdates_installsysexts'] = '1';
+$TYPO3_CONF_VARS['INSTALL']['wizardDone']['tx_coreupdates_compressionlevel'] = '1';
 
 ## INSTALL SCRIPT EDIT POINT TOKEN - all lines after this points may be changed by the install script!
 
