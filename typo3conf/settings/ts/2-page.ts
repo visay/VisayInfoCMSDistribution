@@ -20,8 +20,8 @@ page.includeJSFooterlibs {
 	jquery = http://code.jquery.com/jquery-1.8.2.min.js
 	jquery.external = 1
 	jquery.forceOnTop = 1
-#	jquery.disableCompression = 1
-#	jquery.excludeFromConcatenation = 1
+	jquery.disableCompression = 1
+	jquery.excludeFromConcatenation = 1
 
 	transition = fileadmin/templates/bootstrap/js/bootstrap-transition.js
 	dropdown = fileadmin/templates/scripts/bootstrap-dropdown.js
