@@ -8,10 +8,13 @@ page.shortcutIcon = fileadmin/templates/images/icons/favicon.ico
 
 	# Include CSS
 page.includeCSS {
-	file1 = fileadmin/templates/styles/bootstrap.css
-	file2 = fileadmin/templates/styles/responsive.css
-	file3 = http://fonts.googleapis.com/css?family=Nova+Slim|Open+Sans
-	file3.external = 1
+	file1 = http://fonts.googleapis.com/css?family=Nova+Slim|Open+Sans
+	file1.external = 1
+	file1.forceOnTop = 1
+	file1.disableCompression = 1
+	file1.excludeFromConcatenation = 1
+	file2 = fileadmin/templates/styles/bootstrap.css
+	file3 = fileadmin/templates/styles/responsive.css
 	file4 = fileadmin/templates/styles/prettify.css
 	file5 = fileadmin/templates/styles/visay-info.css
 }
