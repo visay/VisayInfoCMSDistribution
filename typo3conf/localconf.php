@@ -26,9 +26,9 @@ $typo_db_extTableDef_script = 'extTables.php';
 // $TYPO3_CONF_VARS['SYS']['encryptionKey'] = '1573be58e47af894d59045dc4930dc4201309009b0a51ca1ccbe4ec773218140d75aea0bf496635364731ba44f2b6573';
 // $TYPO3_CONF_VARS['SYS']['sitename'] = 'Your Sitename';
 // $TYPO3_CONF_VARS['SYS']['serverTimeZone'] = '7';
-// $TYPO3_CONF_VARS['SYS']['systemLog'] = 'error_log,,0';
-// $TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '3';
-// $TYPO3_CONF_VARS['SYS']['enableDeprecationLog'] = '';
+// $TYPO3_CONF_VARS['SYS']['systemLog'] = 'error_log,,1';
+// $TYPO3_CONF_VARS['SYS']['systemLogLevel'] = '1';
+// $TYPO3_CONF_VARS['SYS']['enableDeprecationLog'] = 'file';
 // $TYPO3_CONF_VARS['SYS']['displayErrors'] = '1';
 
 	// Backend configuration
@@ -42,7 +42,7 @@ $typo_db_extTableDef_script = 'extTables.php';
 
 	// Extension configuation
 // $TYPO3_CONF_VARS['EXT']['noEdit'] = '0';
-// $TYPO3_CONF_VARS['EXT']['allowLocalInstall'] = '0';
+// $TYPO3_CONF_VARS['EXT']['allowLocalInstall'] = '1';
 // $TYPO3_CONF_VARS['EXT']['extCache'] = '0';
 
 ///////////////////////////////////////////////////
@@ -51,7 +51,6 @@ $typo_db_extTableDef_script = 'extTables.php';
 $TYPO3_CONF_VARS['SYS']['compat_version'] = '4.7';
 
 	// Backend configuration
-$TYPO3_CONF_VARS['BE']['versionNumberInFilename'] = '0';
 $TYPO3_CONF_VARS['BE']['disable_exec_function'] = '0';
 $TYPO3_CONF_VARS['BE']['loginSecurityLevel']  = 'rsa';
 $TYPO3_CONF_VARS['BE']['compactFlexFormXML'] = '1';
@@ -76,8 +75,8 @@ $TYPO3_CONF_VARS['GFX']['im_version_5'] = 'im6';
 $TYPO3_CONF_VARS['GFX']['im_combine_filename'] = 'composite';
 
 	// Loaded extensions
-$TYPO3_CONF_VARS['EXT']['extList'] = 'extbase,css_styled_content,info,perm,func,filelist,fluid,about,version,tsconfig_help,context_help,extra_page_cm_options,impexp,sys_note,tstemplate,tstemplate_ceditor,tstemplate_info,tstemplate_objbrowser,tstemplate_analyzer,func_wizards,wizard_crpages,wizard_sortpages,lowlevel,install,belog,beuser,aboutmodules,setup,taskcenter,info_pagetsconfig,viewpage,rtehtmlarea,t3skin,t3editor,reports,felogin,form,rsaauth,saltedpasswords,cshmanual,opendocs,recycler,scheduler,workspaces,static_info_tables,templavoila,realurl,div2007,sr_feuser_register,indexed_search,dam,dam_ttcontent,dam_index,dam_catedit,phpmyadmin,news';
-$TYPO3_CONF_VARS['EXT']['extList_FE'] = 'extbase,css_styled_content,fluid,version,install,rtehtmlarea,t3skin,felogin,form,rsaauth,saltedpasswords,workspaces,static_info_tables,templavoila,realurl,div2007,sr_feuser_register,indexed_search,dam,dam_ttcontent,dam_index,phpmyadmin,news';
+$TYPO3_CONF_VARS['EXT']['extList'] = 'extbase,css_styled_content,info,perm,func,filelist,fluid,about,version,tsconfig_help,context_help,extra_page_cm_options,impexp,sys_note,tstemplate,tstemplate_ceditor,tstemplate_info,tstemplate_objbrowser,tstemplate_analyzer,func_wizards,wizard_crpages,wizard_sortpages,lowlevel,install,belog,beuser,aboutmodules,setup,taskcenter,info_pagetsconfig,viewpage,rtehtmlarea,t3skin,t3editor,reports,felogin,form,rsaauth,saltedpasswords,cshmanual,opendocs,recycler,scheduler,workspaces,static_info_tables,templavoila,realurl,div2007,sr_feuser_register,indexed_search,dam,dam_ttcontent,dam_index,dam_catedit,phpmyadmin,news,formhandler';
+$TYPO3_CONF_VARS['EXT']['extList_FE'] = 'extbase,css_styled_content,fluid,version,install,rtehtmlarea,t3skin,felogin,form,rsaauth,saltedpasswords,workspaces,static_info_tables,templavoila,realurl,div2007,sr_feuser_register,indexed_search,dam,dam_ttcontent,dam_index,phpmyadmin,news,formhandler';
 
 	// Extension configuration
 $TYPO3_CONF_VARS['EXT']['extConf']['saltedpasswords'] = 'a:2:{s:3:"FE.";a:2:{s:7:"enabled";s:1:"1";s:21:"saltedPWHashingMethod";s:28:"tx_saltedpasswords_salts_md5";}s:3:"BE.";a:2:{s:7:"enabled";s:1:"1";s:21:"saltedPWHashingMethod";s:28:"tx_saltedpasswords_salts_md5";}}';
