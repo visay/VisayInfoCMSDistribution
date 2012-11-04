@@ -11,3 +11,6 @@ plugin.tx_felogin_pi1.templateFile = fileadmin/templates/plugins/tx_felogin_pi1.
 
 	# indexed_search extension
 plugin.tx_indexedsearch._CSS_DEFAULT_STYLE >
+
+	# formhandler extension
+<INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/settings/ts/plugin/formhandler/setup.ts">
