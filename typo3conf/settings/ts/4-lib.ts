@@ -40,7 +40,7 @@ lib.search {
 	}
 
 	dataWrap (
-		<form class="nav-collapse navbar-search pull-right" action="|" method="post">
+		<form class="navbar-search pull-right" action="|" method="post">
 			<input type="text" name="tx_indexedsearch[sword]" class="search-query" placeholder="Search">
 		</form>
 	)

@@ -70,8 +70,13 @@ footer {
 	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff@primaryColorMedium', endColorstr='#ff@primaryColorLight', GradientType=0);
 }
 
-.navbar-inverse .navbar-search {
-	margin-right: 5px;
+.navbar-inverse .nav-collapse .navbar-form, .navbar-inverse .nav-collapse .navbar-search {
+	border-top-color: @white;
+	border-bottom-color: @white;
+}
+
+#search .navbar-search {
+	margin-right: 20px;
 }
 
 .navbar-inverse .navbar-search .search-query {
