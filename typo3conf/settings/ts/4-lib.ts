@@ -1,3 +1,4 @@
+	# Top menu
 lib.topMenu = HMENU
 lib.topMenu {
 	special = directory
@@ -25,10 +26,29 @@ lib.topMenu {
 	}
 }
 
+	# Make homepage shortcut active
 [globalVar = TSFE:id = 2]
 	lib.topMenu.alwaysActivePIDlist = 5
 [end]
 
+	# Search box
+lib.search = TEXT
+lib.search {
+	stdWrap {
+		typolink.parameter = 22
+		typolink.returnLast = url
+	}
+
+	dataWrap (
+		<form class="nav-collapse navbar-search pull-right" action="|" method="post">
+			<input type="text" name="tx_indexedsearch[sword]" class="search-query" placeholder="Search">
+		</form>
+	)
+
+	insertData = 1
+}
+
+	# Account menu
 lib.accountMenu = COA_INT
 lib.accountMenu {
 	10 = HMENU
@@ -81,6 +101,7 @@ lib.accountMenu {
 	}
 }
 
+	# Account menu when there is a user logged in
 [loginUser = *]
 	lib.accountMenu { 
 		10 >
@@ -128,22 +149,7 @@ lib.accountMenu {
 	}
 [end]
 
-lib.search = TEXT
-lib.search {
-	stdWrap {
-		typolink.parameter = 22
-		typolink.returnLast = url
-	}
-
-	dataWrap (
-		<form class="navbar-search pull-right" action="|" method="post">
-			<input type="text" name="tx_indexedsearch[sword]" class="search-query" placeholder="Search">
-		</form>
-	)
-
-	insertData = 1
-}
-
+	# Navigation menu
 lib.navBar = HMENU
 lib.navBar {
 	special = directory
@@ -178,7 +184,7 @@ lib.navBar {
 		}
 	}
 }
-
+	# Footer content
 lib.footer = HTML
 lib.footer.value (
 	<p class="pull-right"><a href="#"><i class="icon-hand-up"></i> Back to top</a></p>
