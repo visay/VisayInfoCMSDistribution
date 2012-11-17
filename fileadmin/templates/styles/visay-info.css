@@ -4,7 +4,7 @@ a:hover{color:#e56508;}
 footer{font-size:12px;}
 .container #main-content{min-height:500px;}
 .navbar-inverse .navbar-inner{background-color:#e56508;background-image:-moz-linear-gradient(center top, #ff7200, #f69d24);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ff7200), to(#f69d24));background-image:-webkit-linear-gradient(top, #ff7200, #f69d24);background-image:-o-linear-gradient(top, #ff7200, #f69d24);background-image:linear-gradient(to bottom, #ff7200, #f69d24);border-color:#b3b3b3;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#ff@primaryColorMedium', endColorstr='#ff@primaryColorLight', GradientType=0);}
-.navbar-inverse .navbar-search{margin-right:20px;}
+.navbar-inverse .navbar-search{margin-right:5px;}
 .navbar-inverse .navbar-search .search-query{background-color:#b3b3b3;border-color:#ffffff;}
 .navbar-inverse .navbar-search .search-query:-moz-placeholder{color:#515151;}
 .navbar-inverse .navbar-search .search-query:-ms-input-placeholder{color:#515151;}
