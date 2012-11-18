@@ -185,7 +185,7 @@ lib.navBar {
 	}
 }
 	# Footer content
-lib.footer = HTML
+lib.footer = TEXT
 lib.footer.value (
 	<p class="pull-right"><a href="#"><i class="icon-hand-up"></i> Back to top</a></p>
 	<p><i class="icon-thumbs-up"></i> Powered by TYPO3 CMS v4. TYPO3 .... inspiring people to share! Get involved: <a target="_blank" href="http://typo3.org">http://typo3.org</a>.</p>
