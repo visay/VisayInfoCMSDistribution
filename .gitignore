@@ -4,6 +4,7 @@
 /typo3conf/realurl_autoconf.php
 /typo3temp/*
 /fileadmin/user_upload/*
+/fileadmin/_processed_/*
 *~
 typo3_src
 .buildpath

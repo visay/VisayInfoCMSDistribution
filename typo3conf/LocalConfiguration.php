@@ -20,7 +20,6 @@ return array(
 	),
 	'EXT' => array(
 		'allowLocalInstall' => '0',
-		'extCache' => '0',
 		'extConf' => array(
 			'dam' => 'a:7:{s:8:"tsconfig";s:7:"default";s:13:"file_filelist";s:1:"0";s:15:"hideMediaFolder";s:1:"1";s:8:"mediatag";s:1:"1";s:15:"htmlAreaBrowser";s:1:"1";s:5:"devel";s:1:"0";s:17:"disableVersioning";s:1:"0";}',
 			'dam_index' => 'a:2:{s:18:"add_media_indexing";s:1:"0";s:23:"add_media_file_indexing";s:1:"1";}',

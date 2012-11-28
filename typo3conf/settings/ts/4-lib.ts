@@ -7,7 +7,6 @@ lib.topMenu {
 	1 = TMENU
 	1 {
 		wrap = <ul class="nav">|</ul>
-		noBlur = 1
 
 		NO = 1
 		NO {
@@ -58,8 +57,6 @@ lib.accountMenu {
 
 		1 = TMENU
 		1 {
-			noBlur = 1
-
 			NO {
 				ATagTitle.field = title // nav_title
 				stdWrap.htmlSpecialChars = 1
@@ -81,8 +78,6 @@ lib.accountMenu {
 
 			1 = TMENU
 			1 {
-				noBlur = 1
-
 				NO = 1
 				NO {
 					ATagTitle.field = title // nav_title
@@ -131,8 +126,6 @@ lib.accountMenu {
 	
 				1 = TMENU
 				1 {
-					noBlur = 1
-	
 					NO {
 						ATagTitle.field = title // nav_title
 						stdWrap.htmlSpecialChars = 1
@@ -158,7 +151,6 @@ lib.navBar {
 	1 = TMENU
 	1 {
 		wrap = <ul class="nav nav-list">|</ul>
-		noBlur = 1
 
 		NO = 1
 		NO {
