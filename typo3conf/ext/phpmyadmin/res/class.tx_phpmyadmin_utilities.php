@@ -39,7 +39,7 @@
  *
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
- * @version		$Id: class.tx_phpmyadmin_utilities.php 65377 2012-08-13 16:27:56Z mehrwert $
+ * @version		$Id: class.tx_phpmyadmin_utilities.php 68078 2012-11-28 23:22:22Z mehrwert $
  * @author		mehrwert <typo3@mehrwert.de>
  * @license		GPL
  */
@@ -53,10 +53,10 @@ class tx_phpmyadmin_utilities {
 	 * @param	object		$ref: The parent object (BE User Auth)
 	 * @return	void
 	 */
-	function pmaLogOff($params = array(), $ref = null) {
+	public function user_pmaLogOff($params = array(), $ref = null) {
 
 			// Define the cookie path
-		$cookiePath = substr(t3lib_extmgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT'])).'res/'.$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'].'/';
+		$cookiePath = substr(t3lib_extMgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT'])).'res/'.$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'].'/';
 
 			// Just ensure that the path is starting with a slash
 		if (strpos($cookiePath, '/') !== 0) {

@@ -1238,18 +1238,25 @@ class tx_div2007_alpha {
 	/**
 	 * Calls user function
 	 */
-	function userProcess_fh001 (
+	/**
+	* Invokes a user process
+	*
+	* @param object $pObject: the name of the parent object
+	* @param array  $conf:    the base TypoScript setup
+	* @param array  $mConfKey: the configuration array of the user process
+	* @param array  $passVar: the array of variables to be passed to the user process
+	* @return array the updated array of passed variables
+	*/
+	public function userProcess_fh001 (
 		$pObject,
-		&$conf,
+		$conf,
 		$mConfKey,
 		$passVar
 	) {
-		global $TSFE;
-
 		if (isset($conf) && is_array($conf) && $conf[$mConfKey]) {
-			$funcConf = $conf[$mConfKey.'.'];
+			$funcConf = $conf[$mConfKey . '.'];
 			$funcConf['parentObj'] = $pObject;
-			$passVar = $TSFE->cObj->callUserFunction(
+			$passVar = $GLOBALS['TSFE']->cObj->callUserFunction(
 				$conf[$mConfKey],
 				$funcConf,
 				$passVar
