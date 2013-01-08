@@ -180,7 +180,7 @@ lib.navBar {
 lib.footer = TEXT
 lib.footer.value (
 	<p class="pull-right"><a href="#"><i class="icon-hand-up"></i> Back to top</a></p>
-	<p><i class="icon-thumbs-up"></i> Powered by TYPO3 CMS v4. TYPO3 .... inspiring people to share! Get involved: <a target="_blank" href="http://typo3.org">http://typo3.org</a>.</p>
+	<p><i class="icon-thumbs-up"></i> Powered by TYPO3 CMS v6. TYPO3 .... inspiring people to share! Get involved: <a target="_blank" href="http://typo3.org">http://typo3.org</a>.</p>
 	<p><i class="icon-thumbs-up"></i> Built with <a target="_blank" href="http://twitter.github.com/bootstrap">Bootstrap</a>, from <a target="_blank" href="http://twitter.com">Twitter</a>. Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
 	<p><i class="icon-thumbs-up"></i> Integration by Visay Keo, Certified TYPO3 Integrator. Follow me <a target="_blank" href="http://twitter.com/visay">@visay</a>.</p>
 )
