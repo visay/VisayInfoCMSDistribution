@@ -11,6 +11,7 @@
 @secondaryColorDark:    #515151;
 @secondaryColorLight:   #B3B3B3;
 @white:                 #FFFFFF;
+@bodyBackgroundColor:   #D7D7D7;
 
 // Font
 // -------------------------
@@ -39,6 +40,7 @@
 body {
 	font-family: @generalFont;
 	color: @secondaryColorDark;
+	background-color: @bodyBackgroundColor;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -47,8 +49,20 @@ a {
 	color: @primaryColorDark;
 }
 
+h1 {
+	margin-bottom: 20px !important;
+}
+
 a:hover {
 	color: @primaryColorDark;
+}
+
+p.bodytext {
+	margin: 0 0 20px;
+}
+
+div.alert p.bodytext {
+	margin: 0;
 }
 
 footer {
@@ -182,4 +196,12 @@ footer {
 
 .btn-group.open .btn-primary.dropdown-toggle {
 	background-color: @primaryColorDark;
+}
+
+#contact-form .submit {
+	margin-right: 20px;
+}
+
+#contact-form #receive-copy {
+	margin-bottom: 5px;
 }

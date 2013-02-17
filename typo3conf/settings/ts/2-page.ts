@@ -65,7 +65,7 @@ page.headerData.10.value (
 page.headerData.20 = TEXT
 page.headerData.20 {
 	field = subtitle // title
-	noTrimWrap = |<title>| - Keo Visay</title>|
+	noTrimWrap = |<title>| - Visay.Info</title>|
 	stdWrap.htmlSpecialChars = 1
 }
 

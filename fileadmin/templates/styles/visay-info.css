@@ -1,6 +1,9 @@
-@media (max-width:979px){body{padding-top:0 !important;padding-bottom:0 !important;} .hero-unit h1{font-size:40px;} .hero-unit p{font-size:16px;}}body{font-family:'Open Sans',sans-serif;color:#515151;}
+@media (max-width:979px){body{padding-top:0 !important;padding-bottom:0 !important;} .hero-unit h1{font-size:40px;} .hero-unit p{font-size:16px;}}body{font-family:'Open Sans',sans-serif;color:#515151;background-color:#d7d7d7;}
 h1,h2,h3,h4,h5,h6,a{font-family:'Nova Slim',cursive;color:#e56508;}
+h1{margin-bottom:20px !important;}
 a:hover{color:#e56508;}
+p.bodytext{margin:0 0 20px;}
+div.alert p.bodytext{margin:0;}
 footer{font-size:12px;}
 .container #main-content{min-height:500px;}
 .navbar-inverse .navbar-inner{background-color:#e56508;background-image:-moz-linear-gradient(center top, #ff7200, #f69d24);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ff7200), to(#f69d24));background-image:-webkit-linear-gradient(top, #ff7200, #f69d24);background-image:-o-linear-gradient(top, #ff7200, #f69d24);background-image:linear-gradient(to bottom, #ff7200, #f69d24);border-color:#b3b3b3;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#ff@primaryColorMedium', endColorstr='#ff@primaryColorLight', GradientType=0);}
@@ -25,3 +28,5 @@ footer{font-size:12px;}
 .btn-primary{background-color:#ff7200;*background-color:#ff7200;background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f69d24), to(#e56508));background-image:-webkit-linear-gradient(top, #f69d24, #e56508);background-image:-o-linear-gradient(top, #f69d24, #e56508);background-image:linear-gradient(to bottom, #f69d24, #e56508);background-image:-moz-linear-gradient(top, #f69d24, #e56508);border-color:#f69d24 #ff7200 #e56508;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#ff@primaryColorLight', endColorstr='#ff@primaryColorDark', GradientType=0);}
 .btn-primary:hover,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{background-color:#e56508;*background-color:#e56508;}
 .btn-group.open .btn-primary.dropdown-toggle{background-color:#e56508;}
+#contact-form .submit{margin-right:20px;}
+#contact-form #receive-copy{margin-bottom:5px;}
