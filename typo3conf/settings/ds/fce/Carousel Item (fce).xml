@@ -10,7 +10,7 @@
 		</tx_templavoila>
 		<type>array</type>
 		<el type="array">
-			<field_image type="array">
+			<field_img type="array">
 				<tx_templavoila type="array">
 					<title>Image</title>
 					<sample_data type="array">
@@ -19,36 +19,36 @@
 					<eType>image</eType>
 					<TypoScript>
 						<![CDATA[
-							10 = RECORDS
-							10.source.current = 1
-							10.dontCheckPid = 1
-							10.tables = tx_dam
-							10.conf.tx_dam = IMG_RESOURCE
-							10.conf.tx_dam {
-								file { 
-									import.dataWrap = {field:file_path}|{field:file_name}
-									maxW = 1150
-								}
-								stdWrap.wrap = <img alt="" src="|" />
-							}
+							10 = IMG_RESOURCE
+							10.file.import = fileadmin/user_upload/
+							10.file.import.current = 1
+							10.file.import.listNum = 0
+							10.file.maxW = 1150
+							10.stdWrap.wrap = <img alt="" src=" | " />
 						]]>
 					</TypoScript>
 					<preview></preview>
+					<proc type="array">
+						<int>0</int>
+						<HSC>0</HSC>
+						<stdWrap></stdWrap>
+					</proc>
 				</tx_templavoila>
 				<TCEforms type="array">
 					<label>Image</label>
 					<config type="array">
 						<type>group</type>
-						<internal_type>db</internal_type>
-						<allowed>tx_dam</allowed>
-						<max_size>1000</max_size>
+						<internal_type>file</internal_type>
+						<allowed>png,jpg,jpeg</allowed>
+						<max_size>5120</max_size>
+						<uploadfolder>fileadmin/user_upload</uploadfolder>
 						<show_thumbs>1</show_thumbs>
 						<size>1</size>
 						<maxitems>1</maxitems>
 						<minitems>1</minitems>
 					</config>
 				</TCEforms>
-			</field_image>
+			</field_img>
 			<field_caption type="array">
 				<tx_templavoila type="array">
 					<title>Caption</title>
