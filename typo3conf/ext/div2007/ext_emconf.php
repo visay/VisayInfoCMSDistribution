@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "div2007".
  *
- * Auto generated 13-12-2012 23:01
+ * Auto generated 04-03-2013 11:44
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'description' => 'This library is continually enhanced. It is used by other extensions. It brings t3lib_div copied from TYPO3 4.7 rc2',
 	'category' => 'misc',
 	'shy' => 0,
-	'version' => '0.10.5',
+	'version' => '0.11.1',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',

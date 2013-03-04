@@ -133,13 +133,18 @@ class tx_div2007_ff {
 	function get () {
 
 		//true when the first arguement is a flexForm or a reference to flexForm
-		if(is_array(func_get_arg(0)) || array_key_exists(func_get_arg(0),tx_div2007_ff::$flexForms)) {
+		if(
+			is_array(func_get_arg(0)) ||
+			array_key_exists(
+				func_get_arg(0),
+				tx_div2007_ff::$flexForms
+			)
+		) {
 			//case 1, $args 1 is an array...     case 2, $args 1 is a key array that contains a flexform
 			is_array(func_get_arg(0)) ? $_flexForm = func_get_arg(0) : $_flexForm =& tx_div2007_ff::getFlexForm(func_get_arg(0));
 			$index = 1;
-		}
-		else{
-			$_flexForm =& self::$flexForm;
+		} else {
+			$_flexForm = &self::$flexForm;
 			$index = 0;
 		}
 		$fieldName = func_get_arg($index);

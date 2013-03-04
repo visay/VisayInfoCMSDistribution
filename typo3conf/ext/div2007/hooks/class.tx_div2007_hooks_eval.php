@@ -58,7 +58,7 @@ class tx_double6 {
 		if ($set) {
 			$theDec = 0;
 			for ($a=strlen($value); $a > 0; $a--) {
-				if (substr($value, $a - 1, 1) == '.' || substr($value, $a-1, 1) == ',') {
+				if (substr($value, $a - 1, 1) == '.' || substr($value, $a - 1, 1) == ',') {
 					$theDec = substr($value, $a);
 					$value = substr($value, 0, $a - 1);
 					break;

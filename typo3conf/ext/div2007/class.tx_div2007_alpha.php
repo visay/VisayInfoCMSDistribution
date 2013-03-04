@@ -38,7 +38,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha.php 151 2012-08-16 12:11:25Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha.php 170 2013-02-19 12:13:46Z franzholz $
  * @since      0.1
  */
 
@@ -472,7 +472,7 @@ class tx_div2007_alpha {
 			if ($hsc)	$output = htmlspecialchars($output);
 		} else {
 			$output = 'error in call of tx_div2007_alpha::getLL: parameter $langObj is not an object';
-			debug ($output, '$output', __LINE__, __FILE__);
+			debug ($output, '$output'); // keep this
 		}
 
 		return $output;
@@ -618,7 +618,7 @@ class tx_div2007_alpha {
 			}
 		} else {
 			$output = 'error in call of tx_div2007_alpha::loadLL_fh001: parameter $langObj is not an object';
-			debug ($output, '$output', __LINE__, __FILE__);
+			debug ($output, '$output'); // keep this
 		}
 	}
 
@@ -698,7 +698,7 @@ class tx_div2007_alpha {
 			}
 		} else {
 			$rc = 'error in call of tx_div2007_alpha::getSetupOrFFvalue_fh001: parameter $langObj is not an object';
-			debug ($rc, '$rc', __LINE__, __FILE__);
+			debug ($rc, '$rc'); // keep this
 		}
 		return $rc;
 	}
@@ -763,7 +763,7 @@ class tx_div2007_alpha {
 			}
 		} else {
 			$rc = 'error in call of tx_div2007_alpha::getSetupOrFFvalue_fh002: parameter $langObj is not an object';
-			debug ($rc, '$rc', __LINE__, __FILE__);
+			debug ($rc, '$rc'); // keep this
 		}
 		return $rc;
 	}
@@ -803,18 +803,16 @@ class tx_div2007_alpha {
 		$codeExt,
 		$defaultCode,
 		$T3FlexForm_array,
-		$fieldName='display_mode',
-		$bUseFlexforms=TRUE,
-		$sheet='sDEF',
-		$lang='lDEF',
-		$value='vDEF'
+		$fieldName = 'display_mode',
+		$bUseFlexforms = TRUE,
+		$sheet = 'sDEF',
+		$lang = 'lDEF',
+		$value = 'vDEF'
 	) {
 		$rc = '';
 		if (is_object($cObj)) {
 			if (empty($code)) {
 				if ($bUseFlexforms) {
-					include_once(PATH_BE_div2007 . 'class.tx_div2007_ff.php');
-
 					// Converting flexform data into array:
 					$rc = tx_div2007_ff::get($T3FlexForm_array, $fieldName, $sheet, $lang, $value);
 				} else {
@@ -828,7 +826,7 @@ class tx_div2007_alpha {
 			}
 		} else {
 			$rc = 'error in call of tx_div2007_alpha::getSetupOrFFvalue_fh003: parameter $cObj is not an object';
-			debug ($rc, '$rc', __LINE__, __FILE__);
+			debug ($rc, '$rc'); // keep this
 		}
 		return $rc;
 	}
@@ -873,7 +871,7 @@ class tx_div2007_alpha {
 			$out = $langObj->cObj->typolink($label,$conf);
 		} else {
 			$out = 'error in call of tx_div2007_alpha::getTypoLink_fh001: parameter $langObj is not an object';
-			debug ($out, '$out', __LINE__, __FILE__);
+			debug ($out, '$out'); // keep this
 		}
 		return $out;
 	}
@@ -921,7 +919,7 @@ class tx_div2007_alpha {
 			}
 		} else {
 			$out = 'error in call of tx_div2007_alpha::getTypoLink_fh002: parameter $cObj is not an object';
-			debug ($out, '$out', __LINE__, __FILE__);
+			debug ($out, '$out'); // keep this
 		}
 		return $rc;
 	}

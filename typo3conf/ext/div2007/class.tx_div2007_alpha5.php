@@ -40,7 +40,7 @@
  * @author     Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha5.php 166 2012-12-01 08:42:14Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha5.php 170 2013-02-19 12:13:46Z franzholz $
  * @since      0.1
  */
 
@@ -421,6 +421,7 @@ class tx_div2007_alpha5 {
 			$out = 'error in call of tx_div2007_alpha5::getTypoLink_URL_fh003: parameter $cObj is not an object';
 			debug($out, '$out'); // keep this
 		}
+
 		return $result;
 	}
 
