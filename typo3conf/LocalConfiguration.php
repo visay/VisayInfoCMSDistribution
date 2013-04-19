@@ -22,6 +22,7 @@ return array(
 		'allowLocalInstall' => '0',
 		'extConf' => array(
 			'div2007' => 'a:0:{}',
+			'dropbox_carousel' => 'a:0:{}',
 			'fal_dropbox' => 'a:0:{}',
 			'formhandler' => 'a:0:{}',
 			'indexed_search' => 'a:18:{s:8:"pdftools";s:9:"/usr/bin/";s:8:"pdf_mode";s:2:"20";s:5:"unzip";s:9:"/usr/bin/";s:6:"catdoc";s:9:"/usr/bin/";s:6:"xlhtml";s:9:"/usr/bin/";s:7:"ppthtml";s:9:"/usr/bin/";s:5:"unrtf";s:9:"/usr/bin/";s:9:"debugMode";s:1:"0";s:18:"fullTextDataLength";s:1:"0";s:23:"disableFrontendIndexing";s:1:"0";s:21:"enableMetaphoneSearch";s:1:"1";s:6:"minAge";s:2:"24";s:6:"maxAge";s:1:"0";s:16:"maxExternalFiles";s:1:"5";s:26:"useCrawlerForExternalFiles";s:1:"0";s:11:"flagBitMask";s:3:"192";s:16:"ignoreExtensions";s:0:"";s:17:"indexExternalURLs";s:1:"0";}',
@@ -89,6 +90,7 @@ return array(
 			'static_info_tables',
 			'div2007',
 			'fal_dropbox',
+			'dropbox_carousel',
 		),
 		'extList_FE' => 'extbase,css_styled_content,fluid,version,install,rtehtmlarea,t3skin,felogin,form,rsaauth,saltedpasswords,workspaces,static_info_tables,templavoila,realurl,div2007,sr_feuser_register,indexed_search,news,formhandler',
 	),
