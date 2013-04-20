@@ -40,7 +40,7 @@
  * @author     Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha5.php 170 2013-02-19 12:13:46Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha5.php 176 2013-03-14 20:27:13Z franzholz $
  * @since      0.1
  */
 
@@ -1319,6 +1319,19 @@ class tx_div2007_alpha5 {
 			($content != '' ? $content : '') . '</div><!-- END: ' . $idNumber . ' -->';
 
 		return $result;
+	}
+
+
+	static public function getCsConvObj () {
+		if (is_object($GLOBALS['LANG'])) {
+			$csConvObj = $GLOBALS['LANG']->csConvObj;
+		} elseif (is_object($GLOBALS['TSFE'])) {
+			$csConvObj = $GLOBALS['TSFE']->csConvObj;
+		} else {
+			$csConvObj = self::makeInstance('t3lib_cs');
+		}
+
+		return $csConvObj;
 	}
 }
 
