@@ -20,7 +20,7 @@ page.includeCSS {
 }
 
 page.includeJSFooterlibs {
-	jquery = http://code.jquery.com/jquery-1.8.2.min.js
+	jquery = http://code.jquery.com/jquery-1.9.1.min.js
 	jquery.external = 1
 	jquery.forceOnTop = 1
 	jquery.disableCompression = 1
