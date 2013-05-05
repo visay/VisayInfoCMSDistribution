@@ -36,7 +36,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2011 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007.php 151 2012-08-16 12:11:25Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007.php 178 2013-04-09 19:36:55Z franzholz $
  * @since      0.1
  */
 
@@ -348,11 +348,11 @@ class tx_div2007 {
 	static public function getFrontEndUser ($field = '') {
 		$result = FALSE;
 
-		if (isset($GLOBALS['TSFE']->fe_user) && is_object($GLOBALS['TSFE']->fe_user) && is_array($GLOBALS['TSFE']->fe_user)) {
+		if (isset($GLOBALS['TSFE']->fe_user) && is_object($GLOBALS['TSFE']->fe_user) && is_array($GLOBALS['TSFE']->fe_user->user)) {
 			$result = $GLOBALS['TSFE']->fe_user;
 
-			if ($field != '' && isset($result[$field])) {
-				$result = $result[$field];
+			if ($field != '' && isset($GLOBALS['TSFE']->fe_user->user[$field])) {
+				$result = $GLOBALS['TSFE']->fe_user->user[$field];
 			}
 		}
 

@@ -29,7 +29,7 @@
  *
  * email functions
  *
- * $Id: class.tx_div2007_email.php 173 2013-03-02 09:42:35Z franzholz $
+ * $Id: class.tx_div2007_email.php 183 2013-05-03 20:20:59Z franzholz $
  *
  * @author  Franz Holzinger <franz@ttproducts.de>
  * @maintainer	Franz Holzinger <franz@ttproducts.de>
@@ -74,7 +74,8 @@ class tx_div2007_email {
 		$returnPath = '',
 		$replyTo = '',
 		$extKey = '',
-		$hookVar = ''
+		$hookVar = '',
+		$defaultSubject = ''
 	) {
 		global $TYPO3_CONF_VARS;
 
@@ -83,7 +84,9 @@ class tx_div2007_email {
 		$fromNameSlashed = tx_div2007_alpha5::slashName($fromName);
 
 		if ($subject == '') {
-			$defaultSubject = 'message from ' . $fromNameSlashed . ($fromNameSlashed != '' ? '<' : '') . $fromEMail . ($fromNameSlashed != '' ? '>' : '');
+			if ($defaultSubject == '') {
+				$defaultSubject = 'message from ' . $fromNameSlashed . ($fromNameSlashed != '' ? '<' : '') . $fromEMail . ($fromNameSlashed != '' ? '>' : '');
+			}
 
 				// First line is subject
 			if ($HTMLContent) {
