@@ -8,6 +8,9 @@
 /uploads/pics/fal-dropbox-*
 *~
 typo3_src
+typo3
+t3lib
+index.php
 .buildpath
 .settings
 .project
