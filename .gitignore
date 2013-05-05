@@ -4,7 +4,6 @@
 /typo3conf/realurl_autoconf.php
 /typo3conf/ext/phpmyadmin
 /typo3temp/*
-/fileadmin/user_upload/*
 /fileadmin/_processed_/*
 /uploads/pics/fal-dropbox-*
 *~
@@ -12,3 +11,4 @@ typo3_src
 .buildpath
 .settings
 .project
+error_log
