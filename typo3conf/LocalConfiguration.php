@@ -119,11 +119,9 @@ return array(
 	'INSTALL' => array(
 		'wizardDone' => array(
 			'TYPO3\CMS\Install\CoreUpdates\CompressionLevelUpdate' => 1,
-			'TYPO3\CMS\Install\CoreUpdates\InstallSysExtsUpdate' => '["info","perm","func","filelist","about","cshmanual","feedit","opendocs","recycler","t3editor","reports","scheduler"]',
+			'TYPO3\CMS\Install\CoreUpdates\InstallSysExtsUpdate' => '["info","perm","func","filelist","about","cshmanual","feedit","opendocs","recycler","t3editor","reports","scheduler","simulatestatic"]',
 			'TYPO3\CMS\Install\Updates\FilemountUpdateWizard' => 1,
 			'TYPO3\CMS\Install\Updates\TceformsUpdateWizard' => 'tt_content:image,pages:media,pages_language_overlay:media',
-			'tx_coreupdates_compressionlevel' => '1',
-			'tx_coreupdates_installsysexts' => '1',
 		),
 	),
 	'MAIL' => array(
@@ -132,7 +130,7 @@ return array(
 	),
 	'SYS' => array(
 		'UTF8filesystem' => '1',
-		'compat_version' => '6.0',
+		'compat_version' => '6.1',
 		'displayErrors' => '1',
 		'enableDeprecationLog' => 'file',
 		'encryptionKey' => '',
