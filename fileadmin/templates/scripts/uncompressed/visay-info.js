@@ -13,5 +13,13 @@
 		window.prettyPrint && prettyPrint();
 			// carousel demo
 		$('#myCarousel').carousel();
+
+			// swipe slideshow left/right in touch device
+		$(" #myCarousel ").swiperight(function() {
+			$(" #myCarousel ").carousel('prev');
+		});
+		$(" #myCarousel ").swipeleft(function() {
+			$(" #myCarousel ").carousel('next');
+		});
 	})
 }(window.jQuery);

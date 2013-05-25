@@ -26,6 +26,7 @@ page.includeJSFooterlibs {
 	jquery.disableCompression = 1
 	jquery.excludeFromConcatenation = 1
 
+	jquery-mobile = fileadmin/templates/scripts/jquery.mobile.custom.min.js
 	transition = fileadmin/templates/bootstrap/js/bootstrap-transition.js
 	dropdown = fileadmin/templates/scripts/bootstrap-dropdown.js
 	carousel = fileadmin/templates/bootstrap/js/bootstrap-carousel.js
