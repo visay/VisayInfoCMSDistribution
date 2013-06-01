@@ -1,25 +1,18 @@
 <?php
 return array(
 	'BE' => array(
-		'adminOnly' => '2',
 		'compactFlexFormXML' => '1',
 		'compressionLevel' => '9',
 		'disable_exec_function' => '0',
 		'flexformForceCDATA' => '1',
-		'installToolPassword' => '',
 		'loginSecurityLevel' => 'rsa',
 		'versionNumberInFilename' => '1',
 		'warning_email_addr' => 'keo@visay.info',
 	),
 	'DB' => array(
-		'database' => '',
 		'extTablesDefinitionScript' => 'extTables.php',
-		'host' => '',
-		'password' => '',
-		'username' => '',
 	),
 	'EXT' => array(
-		'allowLocalInstall' => '0',
 		'extConf' => array(
 			'div2007' => 'a:0:{}',
 			'dropbox_carousel' => 'a:0:{}',
@@ -131,14 +124,7 @@ return array(
 	'SYS' => array(
 		'UTF8filesystem' => '1',
 		'compat_version' => '6.1',
-		'displayErrors' => '1',
-		'enableDeprecationLog' => 'file',
-		'encryptionKey' => '',
 		'serverTimeZone' => '7',
-		'sitename' => 'Visay Info - Local System',
-		'sqlDebug' => '1',
-		'systemLog' => 'error_log,,1',
-		'systemLogLevel' => '1',
 	),
 );
 ?>

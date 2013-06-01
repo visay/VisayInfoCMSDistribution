@@ -1,0 +1,26 @@
+<?php
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+## Database connection
+$GLOBALS['TYPO3_CONF_VARS']['DB']['database'] = '';
+$GLOBALS['TYPO3_CONF_VARS']['DB']['host'] = 'localhost';
+$GLOBALS['TYPO3_CONF_VARS']['DB']['password'] = '';
+$GLOBALS['TYPO3_CONF_VARS']['DB']['username'] = '';
+
+$GLOBALS['TYPO3_CONF_VARS']['BE']['adminOnly'] = '2';
+$GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = '';
+
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['allowLocalInstall'] = '0';
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '0';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = '';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] = '';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'Visay Info - Live System';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = '0';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = 'error_log,,3';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = '3';
+
+?>

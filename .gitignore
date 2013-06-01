@@ -5,6 +5,7 @@
 /typo3conf/ext/phpmyadmin
 /typo3conf/ext/templavoila
 
+/typo3conf/AdditionalConfiguration.php
 /typo3conf/deprecation_*
 /typo3conf/ENABLE_INSTALL_TOOL
 /typo3conf/realurl_autoconf.php
