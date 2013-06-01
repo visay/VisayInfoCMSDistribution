@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0af093b1fa31fcbf8b4aaeae04e9d7d9",
+    "hash": "94c246034e0ebe7eb1dd0c1d5f792415",
     "packages": [
         {
             "name": "composer/installers",
@@ -124,16 +124,6 @@
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
                 "reference": "1_8_0"
-            },
-            "type": "typo3-flow-package"
-        },
-        {
-            "name": "typo3cms/typo3_src",
-            "version": "6.1.0",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
-                "reference": "TYPO3_6-1-0"
             },
             "type": "typo3-flow-package"
         }

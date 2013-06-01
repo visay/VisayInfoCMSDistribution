@@ -17,7 +17,6 @@
     "require": {
         "php": ">=5.3.7",
         "composer/installers": "*",
-        "typo3cms/typo3_src": "6.1.0",
         "typo3cms/realurl": "1.12.6",
         "typo3cms/news": "2.1.0",
         "typo3cms/templavoila": "1.8.0",
@@ -28,19 +27,6 @@
         "typo3cms/phpmyadmin": "*"
     },
     "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "typo3cms/typo3_src",
-                "version": "6.1.0",
-                "type": "typo3-flow-package",
-                "source": {
-                    "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
-                    "type": "git",
-                    "reference": "TYPO3_6-1-0"
-                }
-            }
-        },
         {
             "type": "package",
             "package": {
@@ -122,9 +108,6 @@
     ],
     "extra": {
         "installer-paths": {
-            "{$name}/": [
-                "typo3cms/typo3_src"
-            ],
             "typo3conf/ext/{$name}/": [
                 "typo3cms/realurl",
                 "typo3cms/news",
