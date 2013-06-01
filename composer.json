@@ -1,0 +1,141 @@
+{
+    "name": "typo3cms/visay-info",
+    "description": "TYPO3 CMS for visay.info website.",
+    "keywords": ["visay-info", "typo3", "cms", "console"],
+    "homepage": "http://www.visay.info",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Visay Keo",
+            "email": "keo@visay.info",
+            "homepage": "http://www.visay.info"
+        }
+    ],
+    "config": {
+        "vendor-dir": "/tmp/composer"
+    },
+    "require": {
+        "php": ">=5.3.7",
+        "composer/installers": "*",
+        "typo3cms/typo3_src": "6.1.0",
+        "typo3cms/realurl": "1.12.6",
+        "typo3cms/news": "2.1.0",
+        "typo3cms/templavoila": "1.8.0",
+        "typo3cms/fal_dropbox": "*",
+        "twitter/bootstrap": "2.2.2"
+    },
+    "require-dev": {
+        "typo3cms/phpmyadmin": "*"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/typo3_src",
+                "version": "6.1.0",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
+                    "type": "git",
+                    "reference": "TYPO3_6-1-0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/realurl",
+                "version": "1.12.6",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
+                    "type": "git",
+                    "reference": "1_12_6"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/news",
+                "version": "2.1.0",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
+                    "type": "git",
+                    "reference": "2.1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/templavoila",
+                "version": "1.8.0",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
+                    "type": "git",
+                    "reference": "1_8_0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/fal_dropbox",
+                "version": "master",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://github.com/froemken/fal_dropbox.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "twitter/bootstrap",
+                "version": "2.2.2",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://github.com/twitter/bootstrap.git",
+                    "type": "git",
+                    "reference": "558bc52432840ea1b2f413438427164288f10350"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/phpmyadmin",
+                "version": "trunk",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
+                    "type": "svn",
+                    "reference": "trunk"
+                }
+            }
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "{$name}/": [
+                "typo3cms/typo3_src"
+            ],
+            "typo3conf/ext/{$name}/": [
+                "typo3cms/realurl",
+                "typo3cms/news",
+                "typo3cms/templavoila",
+                "typo3cms/fal_dropbox",
+                "typo3cms/phpmyadmin"
+            ],
+            "fileadmin/templates/{$name}/": [
+                "twitter/bootstrap"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

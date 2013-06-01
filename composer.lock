@@ -1,0 +1,166 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "0af093b1fa31fcbf8b4aaeae04e9d7d9",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "04ae2b42384ed2f8d40263229530cabbaff3f930"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/04ae2b42384ed2f8d40263229530cabbaff3f930",
+                "reference": "04ae2b42384ed2f8d40263229530cabbaff3f930",
+                "shasum": ""
+            },
+            "replace": {
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Composer\\Installers\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "agl",
+                "cakephp",
+                "codeigniter",
+                "drupal",
+                "fuelphp",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "li3",
+                "lithium",
+                "mako",
+                "phpbb",
+                "ppi",
+                "silverstripe",
+                "symfony",
+                "wordpress",
+                "zend"
+            ],
+            "time": "2013-05-30 16:23:29"
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/twitter/bootstrap.git",
+                "reference": "558bc52432840ea1b2f413438427164288f10350"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/fal_dropbox",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/froemken/fal_dropbox.git",
+                "reference": "master"
+            },
+            "type": "typo3-flow-package",
+            "time": "2013-01-19 10:51:53"
+        },
+        {
+            "name": "typo3cms/news",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
+                "reference": "2.1.0"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/realurl",
+            "version": "1.12.6",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
+                "reference": "1_12_6"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/templavoila",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
+                "reference": "1_8_0"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/typo3_src",
+            "version": "6.1.0",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
+                "reference": "TYPO3_6-1-0"
+            },
+            "type": "typo3-flow-package"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "typo3cms/phpmyadmin",
+            "version": "trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
+                "reference": "trunk"
+            },
+            "type": "typo3-flow-package"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.3.7"
+    },
+    "platform-dev": [
+
+    ]
+}
