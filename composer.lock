@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ca63aaf653550f86dcb23cc6a860ff5e",
+    "hash": "26b35ade9459c5b435bcf8ff97619b2a",
     "packages": [
         {
             "name": "composer/installers",
@@ -98,6 +98,16 @@
             "time": "2013-01-19 10:51:53"
         },
         {
+            "name": "typo3cms/formhandler",
+            "version": "trunk",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
+                "reference": "trunk"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
             "name": "typo3cms/news",
             "version": "2.1.0",
             "source": {
@@ -114,6 +124,16 @@
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
                 "reference": "1_12_6"
+            },
+            "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/sr_feuser_register",
+            "version": "3.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
+                "reference": "Version-3-0-1"
             },
             "type": "typo3-flow-package"
         },
@@ -165,9 +185,11 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "typo3cms/formhandler": 20,
+        "typo3cms/phpmyadmin": 20,
+        "typo3cms/extension_builder": 20
+    },
     "platform": {
         "php": ">=5.3.7"
     },

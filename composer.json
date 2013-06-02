@@ -22,11 +22,13 @@
         "typo3cms/templavoila": "1.8.0",
         "typo3cms/fal_dropbox": "*",
         "typo3cms/static_info_tables": "6.0.3",
+        "typo3cms/formhandler": "dev-trunk",
+        "typo3cms/sr_feuser_register": "3.0.1",
         "twitter/bootstrap": "2.2.2"
     },
     "require-dev": {
-        "typo3cms/phpmyadmin": "*",
-        "typo3cms/extension_builder": "*"
+        "typo3cms/phpmyadmin": "dev-trunk",
+        "typo3cms/extension_builder": "dev-master"
     },
     "repositories": [
         {
@@ -97,6 +99,32 @@
         {
             "type": "package",
             "package": {
+                "name": "typo3cms/formhandler",
+                "version": "trunk",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
+                    "type": "svn",
+                    "reference": "trunk"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/sr_feuser_register",
+                "version": "3.0.1",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
+                    "type": "svn",
+                    "reference": "Version-3-0-1"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "twitter/bootstrap",
                 "version": "2.2.2",
                 "type": "typo3-flow-package",
@@ -142,6 +170,8 @@
                 "typo3cms/templavoila",
                 "typo3cms/fal_dropbox",
                 "typo3cms/static_info_tables",
+                "typo3cms/formhandler",
+                "typo3cms/sr_feuser_register",
                 "typo3cms/phpmyadmin",
                 "typo3cms/extension_builder"
             ],
