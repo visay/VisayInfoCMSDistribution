@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "26b35ade9459c5b435bcf8ff97619b2a",
+    "hash": "0b748bf718c6ae772aaa98c632ffbb0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -85,6 +85,17 @@
                 "reference": "558bc52432840ea1b2f413438427164288f10350"
             },
             "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/dropbox_carousel",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:visay/dropbox_carousel.git",
+                "reference": "master"
+            },
+            "type": "typo3-flow-package",
+            "time": "2013-06-02 06:28:18"
         },
         {
             "name": "typo3cms/fal_dropbox",
@@ -187,6 +198,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "typo3cms/formhandler": 20,
+        "typo3cms/dropbox_carousel": 20,
         "typo3cms/phpmyadmin": 20,
         "typo3cms/extension_builder": 20
     },

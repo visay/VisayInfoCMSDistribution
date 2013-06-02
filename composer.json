@@ -24,6 +24,7 @@
         "typo3cms/static_info_tables": "6.0.3",
         "typo3cms/formhandler": "dev-trunk",
         "typo3cms/sr_feuser_register": "3.0.1",
+        "typo3cms/dropbox_carousel": "dev-master",
         "twitter/bootstrap": "2.2.2"
     },
     "require-dev": {
@@ -125,6 +126,19 @@
         {
             "type": "package",
             "package": {
+                "name": "typo3cms/dropbox_carousel",
+                "version": "master",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git@github.com:visay/dropbox_carousel.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "twitter/bootstrap",
                 "version": "2.2.2",
                 "type": "typo3-flow-package",
@@ -172,6 +186,7 @@
                 "typo3cms/static_info_tables",
                 "typo3cms/formhandler",
                 "typo3cms/sr_feuser_register",
+                "typo3cms/dropbox_carousel",
                 "typo3cms/phpmyadmin",
                 "typo3cms/extension_builder"
             ],
