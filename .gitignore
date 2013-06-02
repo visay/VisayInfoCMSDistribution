@@ -5,6 +5,7 @@
 /typo3conf/ext/phpmyadmin
 /typo3conf/ext/templavoila
 /typo3conf/ext/static_info_tables
+/typo3conf/ext/extension_builder
 
 /typo3conf/AdditionalConfiguration.php
 /typo3conf/deprecation_*

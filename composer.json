@@ -25,7 +25,8 @@
         "twitter/bootstrap": "2.2.2"
     },
     "require-dev": {
-        "typo3cms/phpmyadmin": "*"
+        "typo3cms/phpmyadmin": "*",
+        "typo3cms/extension_builder": "*"
     },
     "repositories": [
         {
@@ -118,6 +119,19 @@
                     "reference": "trunk"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/extension_builder",
+                "version": "master",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/TYPO3v4/Extensions/extension_builder.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "extra": {
@@ -128,7 +142,8 @@
                 "typo3cms/templavoila",
                 "typo3cms/fal_dropbox",
                 "typo3cms/static_info_tables",
-                "typo3cms/phpmyadmin"
+                "typo3cms/phpmyadmin",
+                "typo3cms/extension_builder"
             ],
             "fileadmin/templates/{$name}/": [
                 "twitter/bootstrap"
