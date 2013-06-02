@@ -21,6 +21,7 @@
         "typo3cms/news": "2.1.0",
         "typo3cms/templavoila": "1.8.0",
         "typo3cms/fal_dropbox": "*",
+        "typo3cms/static_info_tables": "6.0.3",
         "twitter/bootstrap": "2.2.2"
     },
     "require-dev": {
@@ -82,6 +83,19 @@
         {
             "type": "package",
             "package": {
+                "name": "typo3cms/static_info_tables",
+                "version": "6.0.3",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
+                    "type": "svn",
+                    "reference": "Version-6-0-3"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "twitter/bootstrap",
                 "version": "2.2.2",
                 "type": "typo3-flow-package",
@@ -113,6 +127,7 @@
                 "typo3cms/news",
                 "typo3cms/templavoila",
                 "typo3cms/fal_dropbox",
+                "typo3cms/static_info_tables",
                 "typo3cms/phpmyadmin"
             ],
             "fileadmin/templates/{$name}/": [
