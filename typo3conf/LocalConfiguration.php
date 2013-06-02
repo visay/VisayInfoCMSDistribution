@@ -124,6 +124,7 @@ return array(
 	'SYS' => array(
 		'UTF8filesystem' => '1',
 		'compat_version' => '6.1',
+		'defaultCategorizedTables' => 'pages,tt_content',
 		'serverTimeZone' => '7',
 	),
 );
