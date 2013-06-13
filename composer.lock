@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "04ae2b42384ed2f8d40263229530cabbaff3f930"
+                "reference": "d849ca175145ac84ace229f2a18f4c2f0693b1aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/04ae2b42384ed2f8d40263229530cabbaff3f930",
-                "reference": "04ae2b42384ed2f8d40263229530cabbaff3f930",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d849ca175145ac84ace229f2a18f4c2f0693b1aa",
+                "reference": "d849ca175145ac84ace229f2a18f4c2f0693b1aa",
                 "shasum": ""
             },
             "replace": {
@@ -74,7 +74,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-05-30 16:23:29"
+            "time": "2013-06-12 16:15:56"
         },
         {
             "name": "twitter/bootstrap",

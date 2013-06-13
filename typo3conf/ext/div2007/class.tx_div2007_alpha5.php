@@ -40,7 +40,7 @@
  * @author     Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha5.php 176 2013-03-14 20:27:13Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha5.php 189 2013-06-10 13:39:37Z franzholz $
  * @since      0.1
  */
 
@@ -594,6 +594,79 @@ class tx_div2007_alpha5 {
 			} else {
 				$word = $langObj->LLtestPrefixAlt . $alt;
 			}
+		}
+
+		$output = (isset($langObj->LLtestPrefix)) ? $langObj->LLtestPrefix . $word : $word;
+
+		if ($hsc) {
+			$output = htmlspecialchars($output);
+		}
+
+		return $output;
+	}
+
+	/**
+	 * Returns the localized label of the LOCAL_LANG key, $key used since TYPO3 4.6
+	 * Notice that for debugging purposes prefixes for the output values can be set with the internal vars ->LLtestPrefixAlt and ->LLtestPrefix
+	 *
+	 * @param	object		tx_div2007_alpha_language_base or a tslib_pibase object
+	 * @param	string		The key from the LOCAL_LANG array for which to return the value.
+	 * @param	string		input: if set then this language is used if possible. output: the used language
+	 * @param	string		Alternative string to return IF no value is found set for the key, neither for the local language nor the default.
+	 * @param	boolean		If TRUE, the output label is passed through htmlspecialchars()
+	 * @return	string		The value from LOCAL_LANG.
+	 */
+	static public function getLL_fh003 (
+		$langObj,
+		$key,
+		&$usedLang = '',
+		$alternativeLabel = '',
+		$hsc = FALSE
+	) {
+		if (
+			$usedLang != '' &&
+			$langObj->LOCAL_LANG[$usedLang][$key][0]['target'] != ''
+		) {
+				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+			if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
+				$word = $GLOBALS['TSFE']->csConv(
+					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+					$langObj->LOCAL_LANG_charset[$usedLang][$key]
+				);
+			} else {
+				$word = $langObj->LOCAL_LANG[$usedLang][$key][0]['target'];
+			}
+		} else if ($langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'] != '') {
+			$usedLang = $langObj->LLkey;
+
+				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+			if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
+				$word = $GLOBALS['TSFE']->csConv(
+					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+					$langObj->LOCAL_LANG_charset[$usedLang][$key]
+				);
+			} else {
+				$word = $langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'];
+			}
+		} elseif ($langObj->altLLkey && $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'] != '') {
+			$usedLang = $langObj->altLLkey;
+
+				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+			if (isset($langObj->LOCAL_LANG_charset[$usedLang][$key])) {
+				$word = $GLOBALS['TSFE']->csConv(
+					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+					$langObj->LOCAL_LANG_charset[$usedLang][$key]
+				);
+			} else {
+				$word = $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'];
+			}
+		} elseif ($langObj->LOCAL_LANG['default'][$key][0]['target'] != '') {
+			$usedLang = 'default';
+				// Get default translation (without charset conversion, english)
+			$word = $langObj->LOCAL_LANG[$usedLang][$key][0]['target'];
+		} else {
+				// Return alternative string or empty
+			$word = (isset($langObj->LLtestPrefixAlt)) ? $langObj->LLtestPrefixAlt . $alternativeLabel : $alternativeLabel;
 		}
 
 		$output = (isset($langObj->LLtestPrefix)) ? $langObj->LLtestPrefix . $word : $word;
