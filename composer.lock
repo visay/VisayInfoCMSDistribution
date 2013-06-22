@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0b748bf718c6ae772aaa98c632ffbb0f",
+    "hash": "aa7f3c57ec4d0589bd8c669d4e6a4204",
     "packages": [
         {
             "name": "composer/installers",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d849ca175145ac84ace229f2a18f4c2f0693b1aa"
+                "reference": "v1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d849ca175145ac84ace229f2a18f4c2f0693b1aa",
-                "reference": "d849ca175145ac84ace229f2a18f4c2f0693b1aa",
+                "url": "https://api.github.com/repos/composer/installers/zipball/v1.0.4",
+                "reference": "v1.0.4",
                 "shasum": ""
             },
             "replace": {
@@ -67,6 +67,7 @@
                 "li3",
                 "lithium",
                 "mako",
+                "modulework",
                 "phpbb",
                 "ppi",
                 "silverstripe",
@@ -74,7 +75,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-06-12 16:15:56"
+            "time": "2013-06-20 02:36:19"
         },
         {
             "name": "twitter/bootstrap",
@@ -150,11 +151,11 @@
         },
         {
             "name": "typo3cms/static_info_tables",
-            "version": "6.0.3",
+            "version": "6.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
-                "reference": "Version-6-0-3"
+                "reference": "Version-6-0-4"
             },
             "type": "typo3-flow-package"
         },
