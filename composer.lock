@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "aa7f3c57ec4d0589bd8c669d4e6a4204",
+    "hash": "9427f9cb2be2747ee841887fb8321a3d",
     "packages": [
         {
             "name": "composer/installers",
@@ -121,11 +121,11 @@
         },
         {
             "name": "typo3cms/news",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
-                "reference": "2.1.0"
+                "reference": "2.2.0"
             },
             "type": "typo3-flow-package"
         },

@@ -30,7 +30,7 @@
  * interface for the language object
  * You can use a pibase object for it.
  *
- * $Id: class.tx_div2007_alpha_language_base.php 151 2012-08-16 12:11:25Z franzholz $
+ * $Id: class.tx_div2007_alpha_language_base.php 190 2013-07-09 10:54:28Z franzholz $
  *
  * @author  Kasper Skaarhoj <kasperYYYY@typo3.com>
  * @maintainer	Franz Holzinger <franz@ttproducts.de>
@@ -77,11 +77,11 @@ class tx_div2007_alpha_language_base {
 		$this->extKey = $extKey;
 		$this->conf = $conf;
 		$this->scriptRelPath = $scriptRelPath;
-		$this->typoVersion = (
-			class_exists('t3lib_utility_VersionNumber') ?
-				t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version) :
-				t3lib_div::int_from_ver(TYPO3_version)
-		);
+		$this->typoVersion =
+			class_exists('TYPO3\\CMS\\Core\\Utility\\VersionNumberUtility') ?
+				\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) :
+				t3lib_div::int_from_ver(TYPO3_version);
+
 	}
 
 	public function getLocallang () {

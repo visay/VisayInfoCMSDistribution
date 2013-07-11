@@ -320,7 +320,7 @@ class tx_div2007_alpha {
 
 			// ext-script
 		if (TYPO3_extTableDef_script) {
-			include (PATH_typo3conf.TYPO3_extTableDef_script);
+			include (PATH_typo3conf . TYPO3_extTableDef_script);
 		}
 	}
 
