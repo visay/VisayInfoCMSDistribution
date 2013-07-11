@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "v1.0.4"
+                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/v1.0.4",
-                "reference": "v1.0.4",
+                "url": "https://api.github.com/repos/composer/installers/zipball/34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
+                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
                 "shasum": ""
             },
             "replace": {
@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
+                    "homepage": "http://dontkry.com",
                     "role": "Developer"
                 }
             ],
@@ -75,7 +75,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-06-20 02:36:19"
+            "time": "2013-06-29 16:45:39"
         },
         {
             "name": "twitter/bootstrap",
