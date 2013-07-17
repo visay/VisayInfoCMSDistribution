@@ -1,4 +1,21 @@
 page = PAGE
+
+	# Google analytics settings
+page.5 = TEXT
+page.5.value (
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-42523446-1', 'visay.info');
+		ga('send', 'pageview');
+
+	</script>
+)
+
+	# Page content from templavoila
 page.10 = USER
 page.10.userFunc = tx_templavoila_pi1->main_page
 page.10.disableExplosivePreview = 1
