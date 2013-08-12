@@ -21,15 +21,16 @@
         "typo3cms/news": "2.2.0",
         "typo3cms/templavoila": "1.8.0",
         "typo3cms/fal_dropbox": "*",
-        "typo3cms/static_info_tables": "6.0.4",
+        "typo3cms/static_info_tables": "6.0.5",
         "typo3cms/formhandler": "dev-trunk",
-        "typo3cms/sr_feuser_register": "3.0.1",
+        "typo3cms/sr_feuser_register": "3.0.2",
         "typo3cms/dropbox_carousel": "dev-master",
         "twitter/bootstrap": "2.2.2"
     },
     "require-dev": {
         "typo3cms/phpmyadmin": "dev-trunk",
-        "typo3cms/extension_builder": "dev-master"
+        "typo3cms/extension_builder": "dev-master",
+        "typo3cms/phpunit": "dev-master"
     },
     "repositories": [
         {
@@ -78,7 +79,7 @@
                 "version": "master",
                 "type": "typo3-flow-package",
                 "source": {
-                    "url": "git://github.com/froemken/fal_dropbox.git",
+                    "url": "git@github.com:visay/fal_dropbox.git",
                     "type": "git",
                     "reference": "master"
                 }
@@ -88,12 +89,12 @@
             "type": "package",
             "package": {
                 "name": "typo3cms/static_info_tables",
-                "version": "6.0.4",
+                "version": "6.0.5",
                 "type": "typo3-flow-package",
                 "source": {
                     "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
                     "type": "svn",
-                    "reference": "Version-6-0-4"
+                    "reference": "Version-6-0-5"
                 }
             }
         },
@@ -114,12 +115,12 @@
             "type": "package",
             "package": {
                 "name": "typo3cms/sr_feuser_register",
-                "version": "3.0.1",
+                "version": "3.0.2",
                 "type": "typo3-flow-package",
                 "source": {
                     "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
                     "type": "svn",
-                    "reference": "Version-3-0-1"
+                    "reference": "Version-3-0-2"
                 }
             }
         },
@@ -143,7 +144,7 @@
                 "version": "2.2.2",
                 "type": "typo3-flow-package",
                 "source": {
-                    "url": "git://github.com/twitter/bootstrap.git",
+                    "url": "git@github.com:twbs/bootstrap.git",
                     "type": "git",
                     "reference": "558bc52432840ea1b2f413438427164288f10350"
                 }
@@ -174,6 +175,19 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/phpunit",
+                "version": "master",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "extra": {
@@ -188,7 +202,8 @@
                 "typo3cms/sr_feuser_register",
                 "typo3cms/dropbox_carousel",
                 "typo3cms/phpmyadmin",
-                "typo3cms/extension_builder"
+                "typo3cms/extension_builder",
+                "typo3cms/phpunit"
             ],
             "fileadmin/templates/{$name}/": [
                 "twitter/bootstrap"

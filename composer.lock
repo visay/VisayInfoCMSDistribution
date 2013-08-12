@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9427f9cb2be2747ee841887fb8321a3d",
+    "hash": "5b198534816c6b755e710d98fa27c500",
     "packages": [
         {
             "name": "composer/installers",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a"
+                "reference": "v1.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
-                "reference": "34bd8e879adc82fac26eb2c7551a03e04f9b7e3a",
+                "url": "https://api.github.com/repos/composer/installers/zipball/v1.0.5",
+                "reference": "v1.0.5",
                 "shasum": ""
             },
             "replace": {
@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
@@ -75,14 +75,14 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-06-29 16:45:39"
+            "time": "2013-08-07 17:25:08"
         },
         {
             "name": "twitter/bootstrap",
             "version": "2.2.2",
             "source": {
                 "type": "git",
-                "url": "git://github.com/twitter/bootstrap.git",
+                "url": "git@github.com:twbs/bootstrap.git",
                 "reference": "558bc52432840ea1b2f413438427164288f10350"
             },
             "type": "typo3-flow-package"
@@ -103,11 +103,11 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/froemken/fal_dropbox.git",
+                "url": "git@github.com:visay/fal_dropbox.git",
                 "reference": "master"
             },
             "type": "typo3-flow-package",
-            "time": "2013-01-19 10:51:53"
+            "time": "2013-08-12 13:50:00"
         },
         {
             "name": "typo3cms/formhandler",
@@ -141,21 +141,21 @@
         },
         {
             "name": "typo3cms/sr_feuser_register",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
-                "reference": "Version-3-0-1"
+                "reference": "Version-3-0-2"
             },
             "type": "typo3-flow-package"
         },
         {
             "name": "typo3cms/static_info_tables",
-            "version": "6.0.4",
+            "version": "6.0.5",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
-                "reference": "Version-6-0-4"
+                "reference": "Version-6-0-5"
             },
             "type": "typo3-flow-package"
         },
@@ -180,7 +180,7 @@
                 "reference": "master"
             },
             "type": "typo3-flow-package",
-            "time": "2013-05-05 17:53:33"
+            "time": "2013-07-24 14:27:40"
         },
         {
             "name": "typo3cms/phpmyadmin",
@@ -191,6 +191,17 @@
                 "reference": "trunk"
             },
             "type": "typo3-flow-package"
+        },
+        {
+            "name": "typo3cms/phpunit",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
+                "reference": "master"
+            },
+            "type": "typo3-flow-package",
+            "time": "2013-07-26 21:41:09"
         }
     ],
     "aliases": [
@@ -201,7 +212,8 @@
         "typo3cms/formhandler": 20,
         "typo3cms/dropbox_carousel": 20,
         "typo3cms/phpmyadmin": 20,
-        "typo3cms/extension_builder": 20
+        "typo3cms/extension_builder": 20,
+        "typo3cms/phpunit": 20
     },
     "platform": {
         "php": ">=5.3.7"
