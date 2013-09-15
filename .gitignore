@@ -1,5 +1,6 @@
 /fileadmin/templates/bootstrap
 /typo3conf/ext/*
+/typo3conf/l10n/*
 
 /typo3conf/AdditionalConfiguration.php
 /typo3conf/deprecation_*
