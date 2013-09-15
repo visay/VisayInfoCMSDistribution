@@ -18,6 +18,7 @@
         "php": ">=5.3.7",
         "composer/installers": "*",
         "typo3cms/realurl": "1.12.6",
+        "typo3cms/core": "6.1.5",
         "typo3cms/news": "2.2.0",
         "typo3cms/templavoila": "1.8.0",
         "typo3cms/fal_dropbox": "*",
@@ -33,6 +34,19 @@
         "typo3cms/phpunit": "dev-master"
     },
     "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "typo3cms/core",
+                "version": "6.1.5",
+                "type": "typo3-flow-package",
+                "source": {
+                    "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
+                    "type": "git",
+                    "reference": "TYPO3_6-1-5"
+                }
+            }
+        },
         {
             "type": "package",
             "package": {
@@ -207,6 +221,9 @@
             ],
             "fileadmin/templates/{$name}/": [
                 "twitter/bootstrap"
+            ],
+            "typo3_src/": [
+                "typo3cms/core"
             ]
         }
     },
