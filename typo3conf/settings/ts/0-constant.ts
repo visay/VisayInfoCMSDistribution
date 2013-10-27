@@ -18,3 +18,6 @@ plugin.tx_srfeuserregister_pi1.userGroupAfterConfirmation = 2
 
 	# formhandler extension
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/settings/ts/plugin/formhandler/constants.ts">
+
+	# football_manager extension
+<INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/settings/ts/plugin/football_manager/constants.ts">

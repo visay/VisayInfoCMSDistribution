@@ -14,3 +14,6 @@ plugin.tx_indexedsearch._CSS_DEFAULT_STYLE >
 
 	# formhandler extension
 <INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/settings/ts/plugin/formhandler/setup.ts">
+
+	# formhandler extension
+<INCLUDE_TYPOSCRIPT: source="FILE: typo3conf/settings/ts/plugin/football_manager/setup.ts">
