@@ -8,6 +8,7 @@
 /typo3conf/realurl_autoconf.php
 /typo3temp/*
 /uploads/pics/fal-dropbox-*
+/uploads/tx_footballmanager/*
 /fileadmin/_processed_/*
 
 /.buildpath

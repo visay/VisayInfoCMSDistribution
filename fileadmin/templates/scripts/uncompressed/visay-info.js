@@ -28,6 +28,11 @@
 			loadComments('comments', 'visay');
 		});
 
+			// Filter the player list on selection change
+		$('.tx-football-manager #player-selected').on('change', function() {
+			$('.tx-football-manager #player-filter').submit();
+		});
+
 	})
 }(window.jQuery);
 

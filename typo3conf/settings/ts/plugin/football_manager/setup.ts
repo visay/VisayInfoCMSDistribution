@@ -19,10 +19,19 @@ plugin.tx_footballmanager._CSS_DEFAULT_STYLE (
 		-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 		-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	}
-	
+
 	.tx-football-manager table td,
 	.tx-football-manager table th {
 		text-align: center;
 		vertical-align: middle;
+	}
+
+	.tx-football-manager table form,
+	.tx-football-manager table form select {
+		margin-bottom: 0;
+	}
+
+	.tx-football-manager table select {
+		width: 100%;
 	}
 )

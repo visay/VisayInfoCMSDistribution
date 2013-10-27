@@ -48,6 +48,7 @@ page.includeJSFooterlibs {
 	dropdown = fileadmin/templates/scripts/bootstrap-dropdown.js
 	carousel = fileadmin/templates/bootstrap/js/bootstrap-carousel.js
 	collapse = fileadmin/templates/bootstrap/js/bootstrap-collapse.js
+	modal = fileadmin/templates/bootstrap/js/bootstrap-modal.js
 	prettifier = fileadmin/templates/scripts/prettify.js
 }
 
