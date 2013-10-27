@@ -27,7 +27,7 @@
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @copyright  2008-2012 Franz Holzinger
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id:$
+ * @version    SVN: $Id: class.tx_div2007_hooks_eval.php 199 2013-09-10 15:54:08Z franzholz $
  * @since      0.1
  */
 

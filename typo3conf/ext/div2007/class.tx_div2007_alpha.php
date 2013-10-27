@@ -38,7 +38,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha.php 170 2013-02-19 12:13:46Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha.php 207 2013-09-26 07:21:48Z franzholz $
  * @since      0.1
  */
 
@@ -633,8 +633,8 @@ class tx_div2007_alpha {
 		$restStr = trim(substr($input, 4));
 		$extPrfx = '';
 		if (!strcmp(substr($restStr, 0, 4), 'EXT:')) {
-			$restStr = trim(substr($restStr,4));
-			$extPrfx='EXT:';
+			$restStr = trim(substr($restStr, 4));
+			$extPrfx = 'EXT:';
 		}
 		$parts = explode(':', $restStr);
 		return ($parts[1]);
@@ -1333,17 +1333,9 @@ class tx_div2007_alpha {
 			// Initializing variables:
 		$pointer = intval($pObject->piVars[$pointerName]);
 		$count = intval($pObject->internal['res_count']);
-		$results_at_a_time = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['results_at_a_time'], 1, 1000) :
-				t3lib_div::intInRange($pObject->internal['results_at_a_time'], 1, 1000)
-		);
+		$results_at_a_time = tx_div2007_core::intInRange($pObject->internal['results_at_a_time'], 1, 1000);
 		$totalPages = ceil($count/$results_at_a_time);
-		$maxPages = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['maxPages'], 1, 100) :
-				t3lib_div::intInRange($pObject->internal['maxPages'], 1, 100)
-		);
+		$maxPages = tx_div2007_core::intInRange($pObject->internal['maxPages'], 1, 100);
 		$pi_isOnlyFields = $pObject->pi_isOnlyFields($pObject->pi_isOnlyFields);
 
 			// $showResultCount determines how the results of the pagerowser will be shown.
@@ -1363,11 +1355,7 @@ class tx_div2007_alpha {
 				$pagefloat = ceil(($maxPages - 1)/2);
 			} else {
 				// pagefloat set as integer. 0 = left, value >= $pObject->internal['maxPages'] = right
-				$pagefloat = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($pObject->internal['pagefloat'], -1, $maxPages - 1) :
-						t3lib_div::intInRange($pObject->internal['pagefloat'], -1, $maxPages - 1)
-				);
+				$pagefloat = tx_div2007_core::intInRange($pObject->internal['pagefloat'], -1, $maxPages - 1);
 			}
 		} else {
 			$pagefloat = -1; // pagefloat disabled
@@ -1405,11 +1393,7 @@ class tx_div2007_alpha {
 				$firstPage = max(0, $lastPage - $maxPages);
 			} else {
 				$firstPage = 0;
-				$lastPage = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($totalPages, 1, $maxPages) :
-						t3lib_div::intInRange($totalPages, 1, $maxPages)
-				);
+				$lastPage = tx_div2007_core::intInRange($totalPages, 1, $maxPages);
 			}
 			$links = array();
 
@@ -1513,18 +1497,6 @@ class tx_div2007_alpha {
 	public function initFE () {
 		global $TT, $TSFE;
 
-		// *********************
-		// Libraries included
-		// *********************
-		$TT->push('Include Frontend libraries','');
-		require_once(PATH_tslib . 'class.tslib_fe.php');
-		require_once(PATH_t3lib . 'class.t3lib_page.php');
-		require_once(PATH_t3lib . 'class.t3lib_userauth.php');
-		require_once(PATH_tslib . 'class.tslib_feuserauth.php');
-		require_once(PATH_t3lib . 'class.t3lib_tstemplate.php');
-		require_once(PATH_t3lib . 'class.t3lib_cs.php');
-		$TT->pull();
-
 		// ***********************************
 		// Create $TSFE object (TSFE = TypoScript Front End)
 		// Connecting to database
@@ -1549,13 +1521,6 @@ class tx_div2007_alpha {
 
 		if ($TSFE->RDCT) {
 			$TSFE->sendRedirect();
-		}
-
-		// *******************
-		// output compression
-		// *******************
-		if ($GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel']) {
-			require_once(PATH_t3lib . 'class.gzip_encode.php');
 		}
 
 		// *********

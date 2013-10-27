@@ -3,11 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "35df652e926e8434531b7bbfd7a5f771",
+    "hash": "afa93d37c704d38de346d22c49270b8b",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "dev-master",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
@@ -80,21 +80,11 @@
         },
         {
             "name": "twitter/bootstrap",
-            "version": "2.2.2",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:twbs/bootstrap.git",
-                "reference": "558bc52432840ea1b2f413438427164288f10350"
-            },
-            "type": "typo3-flow-package"
-        },
-        {
-            "name": "typo3cms/core",
-            "version": "6.1.5",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
-                "reference": "TYPO3_6-1-5"
+                "reference": "v2.3.2"
             },
             "type": "typo3-flow-package"
         },
@@ -121,6 +111,17 @@
             "time": "2013-08-12 13:50:00"
         },
         {
+            "name": "typo3cms/football_manager",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:visay/football_manager.git",
+                "reference": "master"
+            },
+            "type": "typo3-flow-package",
+            "time": "2013-10-27 05:42:17"
+        },
+        {
             "name": "typo3cms/formhandler",
             "version": "trunk",
             "source": {
@@ -132,23 +133,24 @@
         },
         {
             "name": "typo3cms/news",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
-                "reference": "2.2.0"
+                "reference": "2.2.1"
             },
             "type": "typo3-flow-package"
         },
         {
             "name": "typo3cms/realurl",
-            "version": "1.12.6",
+            "version": "master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
-                "reference": "1_12_6"
+                "reference": "30dcedd4ceb863c2291b80126c91242edc59aff0"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-flow-package",
+            "time": "2013-10-09 10:52:43"
         },
         {
             "name": "typo3cms/sr_feuser_register",
@@ -218,10 +220,13 @@
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
-        "typo3cms/formhandler": 20,
+        "typo3cms/football_manager": 20,
+        "typo3cms/realurl": 20,
         "typo3cms/dropbox_carousel": 20,
+        "typo3cms/fal_dropbox": 20,
+        "typo3cms/formhandler": 20,
         "typo3cms/phpmyadmin": 20,
         "typo3cms/extension_builder": 20,
         "typo3cms/phpunit": 20

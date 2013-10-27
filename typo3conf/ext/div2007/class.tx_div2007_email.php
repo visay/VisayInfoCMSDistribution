@@ -29,7 +29,7 @@
  *
  * email functions
  *
- * $Id: class.tx_div2007_email.php 190 2013-07-09 10:54:28Z franzholz $
+ * $Id: class.tx_div2007_email.php 212 2013-10-11 13:00:19Z franzholz $
  *
  * @author  Franz Holzinger <franz@ttproducts.de>
  * @maintainer	Franz Holzinger <franz@ttproducts.de>
@@ -77,6 +77,66 @@ class tx_div2007_email {
 		$hookVar = '',
 		$defaultSubject = ''
 	) {
+		if (!is_array($toEMail)) {
+			$emailArray = t3lib_div::trimExplode(',', $toEMail);
+			$toEMail = array();
+			foreach ($emailArray as $email) {
+				$toEMail[] = $email;
+			}
+		}
+
+		if (is_array($toEMail) && count($toEMail)) {
+			$emailArray = $toEMail;
+			$errorEmailArray = array();
+			foreach ($toEMail as $k => $v) {
+				if (
+					(
+						!is_numeric($k) &&
+						!t3lib_div::validEmail($k)
+					) &&
+					(
+						$v == '' ||
+						!t3lib_div::validEmail($v)
+					)
+				) {
+					unset($emailArray[$k]);
+					$errorEmailArray[$k] = $v;
+				}
+			}
+			$toEMail = $emailArray;
+
+			if (
+				count($errorEmailArray)
+			) {
+				foreach ($errorEmailArray as $k => $v) {
+					$email = $k;
+					if (is_numeric($k)) {
+						$email = $v;
+					}
+
+					debug ('t3lib_div::sendMail invalid email address: to "'. $email . '"'); // keep this
+				}
+			}
+
+			if (
+				!count($toEMail)
+			) {
+				debug ('t3lib_div::sendMail exited with error 1'); // keep this
+				return FALSE;
+			}
+		} else {
+				debug ('t3lib_div::sendMail exited with error 2'); // keep this
+			return FALSE;
+		}
+
+		if (
+			!t3lib_div::validEmail($fromEMail)
+		) {
+			debug ('t3lib_div::sendMail invalid email address: from "' . $fromEMail . '"'); // keep this
+			debug ('t3lib_div::sendMail exited with error 3'); // keep this
+			return FALSE;
+		}
+
 		$result = TRUE;
 		$fromName = str_replace('"', '\'', $fromName);
 		$fromNameSlashed = tx_div2007_alpha5::slashName($fromName);
@@ -98,10 +158,7 @@ class tx_div2007_email {
 			}
 		}
 
-		$typo3Version =
-			class_exists('TYPO3\\CMS\\Core\\Utility\\VersionNumberUtility') ?
-				\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) :
-				t3lib_div::int_from_ver(TYPO3_version);
+		$typo3Version = tx_div2007_core::getTypoVersion();
 
 		if (
 			$typo3Version >= 4007000 ||
@@ -117,16 +174,7 @@ class tx_div2007_email {
 				$fromName = '"' . $fromName . '"';
 			}
 
-			if (!is_array($toEMail)) {
-				$emailArray = t3lib_div::trimExplode(',', $toEMail);
-				$toEMail = array();
-				foreach ($emailArray as $email) {
-					$toEMail[] = $email;
-				}
-			}
-
-			/** @var $mail t3lib_mail_Message */
-			$mail = t3lib_div::makeInstance('t3lib_mail_Message');
+			$mail = tx_div2007_core::newMailMessage();
 			$mail->setTo($toEMail)
 				->setFrom(array($fromEMail => $fromName))
 				->setReturnPath($returnPath)
@@ -162,11 +210,19 @@ class tx_div2007_email {
 			}
 		} else if (class_exists('t3lib_htmlmail')) {
 			$fromName = tx_div2007_alpha5::slashName($fromName);
-			t3lib_div::requireOnce(PATH_t3lib . 'class.t3lib_htmlmail.php');
 
 			if (is_array($toEMail)) {
-				list($email, $name) = each($toEMail);
-				$toEMail = tx_div2007_alpha5::slashName($name) . ' <' . $email . '>';
+				$emailArray = array();
+				foreach($toEMail as $k => $v) {
+					if (!is_numeric($k) && $v != '') {
+						$emailArray[] = tx_div2007_alpha5::slashName($v) . ' <' . $k . '>';
+					} else if (is_numeric($k)) {
+						$emailArray[] = $v;
+					} else {
+						$emailArray[] = $k;
+					}
+				}
+				$toEMail = implode(',', $emailArray);
 			}
 
 			$mail = t3lib_div::makeInstance('t3lib_htmlmail');

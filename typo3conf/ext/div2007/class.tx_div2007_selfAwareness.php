@@ -43,7 +43,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2007 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_selfAwareness.php 81 2011-07-19 09:29:48Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_selfAwareness.php 207 2013-09-26 07:21:48Z franzholz $
  * @since      0.1
  */
 class tx_div2007_selfAwareness {

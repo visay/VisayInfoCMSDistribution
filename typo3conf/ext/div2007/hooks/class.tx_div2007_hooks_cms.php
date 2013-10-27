@@ -29,7 +29,7 @@
  *
  * hook functions for the TYPO3 cms
  *
- * $Id:$
+ * $Id: class.tx_div2007_hooks_cms.php 207 2013-09-26 07:21:48Z franzholz $
  *
  * @author	Franz Holzinger <franz@ttproducts.de>
  * @maintainer	Franz Holzinger <franz@ttproducts.de>

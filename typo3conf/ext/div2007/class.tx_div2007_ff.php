@@ -36,7 +36,7 @@
  * @author     Fabien Udriot <fudriot@omic.ch>
  * @copyright  2006-2007 Fabien Udriot
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_ff.php 151 2012-08-16 12:11:25Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_ff.php 207 2013-09-26 07:21:48Z franzholz $
  * @since      0.1
  */
 
@@ -172,9 +172,7 @@ class tx_div2007_ff {
 		$tempArr = $sheetArray;
 		foreach($fieldNameArr as $k => $v){
 			if (
-				class_exists('t3lib_utility_Math') ?
-					t3lib_utility_Math::canBeInterpretedAsInteger($v) :
-					t3lib_div::testInt($v)
+				tx_div2007_core::testInt($v)
 			) {
 				if (is_array($tempArr)){
 					$c = 0;

@@ -40,7 +40,7 @@
  * @author     Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author     Franz Holzinger <franz@ttproducts.de>
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_alpha5.php 190 2013-07-09 10:54:28Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_alpha5.php 207 2013-09-26 07:21:48Z franzholz $
  * @since      0.1
  */
 
@@ -294,7 +294,7 @@ class tx_div2007_alpha5 {
 	 * @return	string		The combined class name (with the correct prefix)
 	 * @see pi_getClassName()
 	 */
-	public static function getClassName_fh001 ($class, $prefixId = '') {
+	static public function getClassName_fh001 ($class, $prefixId = '') {
 		return str_replace('_', '-', $prefixId) . ($prefixId ? '-' : '') . $class;
 	}
 
@@ -307,7 +307,7 @@ class tx_div2007_alpha5 {
 	 * @return	string		The combined class name (with the correct prefix)
 	 * @see pi_getClassName()
 	 */
-	public static function getClassName_fh002 ($class, $prefixId = '', $bAddPrefixTx = FALSE) {
+	static public function getClassName_fh002 ($class, $prefixId = '', $bAddPrefixTx = FALSE) {
 		if ($bAddPrefixTx && $prefixId != '' && strpos($prefixId, 'tx_') !== 0) {
 			$prefixId = 'tx_' . $prefixId;
 		}
@@ -606,17 +606,7 @@ class tx_div2007_alpha5 {
 		$alternativeLabel = '',
 		$hsc = FALSE
 	) {
-		$typoVersion = '';
-
-		if (method_exists($langObj, 'getTypoVersion')) {
-			$typoVersion = $langObj->getTypoVersion();
-		} else {
-			$className = '\\TYPO3\\CMS\\Core\\Utility\\VersionNumberUtility';
-			$typoVersion =
-				method_exists('t3lib_div', 'int_from_ver') ?
-					t3lib_div::int_from_ver(TYPO3_version) :
-					call_user_func($className . '::convertVersionNumberToInteger', TYPO3_version);
-		}
+		$typoVersion = tx_div2007_core::getTypoVersion();
 
 		if ($typoVersion >= 4006000) {
 
@@ -685,7 +675,7 @@ class tx_div2007_alpha5 {
 	 * @param	string		input: if set then this language is used if possible. output: the used language
 	 * @param	string		Alternative string to return IF no value is found set for the key, neither for the local language nor the default.
 	 * @param	boolean		If TRUE, the output label is passed through htmlspecialchars()
-	 * @return	string		The value from LOCAL_LANG.
+	 * @return	string		The value from LOCAL_LANG. FALSE in error case
 	 */
 	static public function getLL_fh003 (
 		$langObj,
@@ -694,53 +684,57 @@ class tx_div2007_alpha5 {
 		$alternativeLabel = '',
 		$hsc = FALSE
 	) {
-		if (
-			$usedLang != '' &&
-			$langObj->LOCAL_LANG[$usedLang][$key][0]['target'] != ''
-		) {
-				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
-			if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
-				$word = $GLOBALS['TSFE']->csConv(
-					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
-					$langObj->LOCAL_LANG_charset[$usedLang][$key]
-				);
-			} else {
+		$output = FALSE;
+
+		if (is_object($langObj)) {
+			if (
+				$usedLang != '' &&
+				$langObj->LOCAL_LANG[$usedLang][$key][0]['target'] != ''
+			) {
+					// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+				if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
+					$word = $GLOBALS['TSFE']->csConv(
+						$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+						$langObj->LOCAL_LANG_charset[$usedLang][$key]
+					);
+				} else {
+					$word = $langObj->LOCAL_LANG[$usedLang][$key][0]['target'];
+				}
+			} else if ($langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'] != '') {
+				$usedLang = $langObj->LLkey;
+
+					// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+				if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
+					$word = $GLOBALS['TSFE']->csConv(
+						$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+						$langObj->LOCAL_LANG_charset[$usedLang][$key]
+					);
+				} else {
+					$word = $langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'];
+				}
+			} elseif ($langObj->altLLkey && $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'] != '') {
+				$usedLang = $langObj->altLLkey;
+
+					// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
+				if (isset($langObj->LOCAL_LANG_charset[$usedLang][$key])) {
+					$word = $GLOBALS['TSFE']->csConv(
+						$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
+						$langObj->LOCAL_LANG_charset[$usedLang][$key]
+					);
+				} else {
+					$word = $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'];
+				}
+			} elseif ($langObj->LOCAL_LANG['default'][$key][0]['target'] != '') {
+				$usedLang = 'default';
+					// Get default translation (without charset conversion, english)
 				$word = $langObj->LOCAL_LANG[$usedLang][$key][0]['target'];
-			}
-		} else if ($langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'] != '') {
-			$usedLang = $langObj->LLkey;
-
-				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
-			if ($langObj->LOCAL_LANG_charset[$usedLang][$key] != '') {
-				$word = $GLOBALS['TSFE']->csConv(
-					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
-					$langObj->LOCAL_LANG_charset[$usedLang][$key]
-				);
 			} else {
-				$word = $langObj->LOCAL_LANG[$langObj->LLkey][$key][0]['target'];
+					// Return alternative string or empty
+				$word = (isset($langObj->LLtestPrefixAlt)) ? $langObj->LLtestPrefixAlt . $alternativeLabel : $alternativeLabel;
 			}
-		} elseif ($langObj->altLLkey && $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'] != '') {
-			$usedLang = $langObj->altLLkey;
 
-				// The "from" charset of csConv() is only set for strings from TypoScript via _LOCAL_LANG
-			if (isset($langObj->LOCAL_LANG_charset[$usedLang][$key])) {
-				$word = $GLOBALS['TSFE']->csConv(
-					$langObj->LOCAL_LANG[$usedLang][$key][0]['target'],
-					$langObj->LOCAL_LANG_charset[$usedLang][$key]
-				);
-			} else {
-				$word = $langObj->LOCAL_LANG[$langObj->altLLkey][$key][0]['target'];
-			}
-		} elseif ($langObj->LOCAL_LANG['default'][$key][0]['target'] != '') {
-			$usedLang = 'default';
-				// Get default translation (without charset conversion, english)
-			$word = $langObj->LOCAL_LANG[$usedLang][$key][0]['target'];
-		} else {
-				// Return alternative string or empty
-			$word = (isset($langObj->LLtestPrefixAlt)) ? $langObj->LLtestPrefixAlt . $alternativeLabel : $alternativeLabel;
+			$output = (isset($langObj->LLtestPrefix)) ? $langObj->LLtestPrefix . $word : $word;
 		}
-
-		$output = (isset($langObj->LLtestPrefix)) ? $langObj->LLtestPrefix . $word : $word;
 
 		if ($hsc) {
 			$output = htmlspecialchars($output);
@@ -758,26 +752,17 @@ class tx_div2007_alpha5 {
 	 * @param	object		tx_div2007_alpha_language_base or a tslib_pibase object
 	 * @param	string		language file to load
 	 * @param	boolean		If TRUE, then former language items can be overwritten from the new file
-	 * @return	void
+	 * @return	boolean
 	 */
 	static public function loadLL_fh002 (
 		$langObj,
 		$langFileParam = '',
 		$overwrite = TRUE
 	) {
+		$result = FALSE;
+
 		if (is_object($langObj)) {
-			$typoVersion = '';
-
-			if (method_exists($langObj, 'getTypoVersion')) {
-				$typoVersion = $langObj->getTypoVersion();
-			} else {
-				$className = '\\TYPO3\\CMS\\Core\\Utility\\VersionNumberUtility';
-				$typoVersion =
-					method_exists('t3lib_div', 'int_from_ver') ?
-						t3lib_div::int_from_ver(TYPO3_version) :
-						call_user_func($className . '::convertVersionNumberToInteger', TYPO3_version);
-			}
-
+			$typoVersion = tx_div2007_core::getTypoVersion();
 			$langFile = ($langFileParam ? $langFileParam : 'locallang.xml');
 
 			if (substr($langFile, 0, 4) === 'EXT:' || substr($langFile, 0, 5) === 'typo3' ||  substr($langFile, 0, 9) === 'fileadmin') {
@@ -785,14 +770,16 @@ class tx_div2007_alpha5 {
 			} else {
 				$basePath = t3lib_extMgm::extPath($langObj->extKey) . ($langObj->scriptRelPath ? dirname($langObj->scriptRelPath) . '/' : '') . $langFile;
 			}
+
 				// Read the strings in the required charset (since TYPO3 4.2)
 			$tempLOCAL_LANG = t3lib_div::readLLfile($basePath, $langObj->LLkey, $GLOBALS['TSFE']->renderCharset);
 
 			if (count($langObj->LOCAL_LANG) && is_array($tempLOCAL_LANG)) {
 				foreach ($langObj->LOCAL_LANG as $langKey => $tempArray) {
 					if (is_array($tempLOCAL_LANG[$langKey])) {
+
 						if ($overwrite) {
-							$langObj->LOCAL_LANG[$langKey] = array_merge($langObj->LOCAL_LANG[$langKey],$tempLOCAL_LANG[$langKey]);
+							$langObj->LOCAL_LANG[$langKey] = array_merge($langObj->LOCAL_LANG[$langKey], $tempLOCAL_LANG[$langKey]);
 						} else {
 							$langObj->LOCAL_LANG[$langKey] = array_merge($tempLOCAL_LANG[$langKey], $langObj->LOCAL_LANG[$langKey]);
 						}
@@ -825,7 +812,6 @@ class tx_div2007_alpha5 {
 			$confLL = $langObj->conf['_LOCAL_LANG.'];
 
 			if (is_array($confLL)) {
-
 				foreach ($confLL as $languageKey => $languageArray) {
 					if (is_array($languageArray)) {
 						$languageKey = substr($languageKey, 0, -1);
@@ -898,10 +884,13 @@ class tx_div2007_alpha5 {
 				}
 			}
 			$langObj->LOCAL_LANG_loaded = 1;
+			$result = TRUE;
 		} else {
 			$output = 'error in call of tx_div2007_alpha::loadLL_fh002: parameter $langObj is not an object';
 			debug($output, '$output'); // keep this
 		}
+
+		return $result;
 	}
 
 
@@ -935,7 +924,7 @@ class tx_div2007_alpha5 {
 	 * @param	array		Additional query string to be passed as parameters to the links
 	 * @return	string		Output HTML-Table, wrapped in <div>-tags with a class attribute (if $wrapArr is not passed,
 	 */
-	function &list_browseresults_fh002 (
+	static public function &list_browseresults_fh002 (
 		$pObject,
 		$langObj,
 		$cObj,
@@ -957,17 +946,9 @@ class tx_div2007_alpha5 {
 			// Initializing variables:
 		$pointer = intval($pObject->ctrlVars[$pointerName]);
 		$count = intval($pObject->internal['resCount']);
-		$limit = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['limit'], 1, 1000) :
-				t3lib_div::intInRange($pObject->internal['limit'], 1, 1000)
-			);
+		$limit = tx_div2007_core::intInRange($pObject->internal['limit'], 1, 1000);
 		$totalPages = ceil($count/$limit);
-		$maxPages = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['maxPages'], 1, 100) :
-				t3lib_div::intInRange($pObject->internal['maxPages'], 1, 100)
-			);
+		$maxPages = tx_div2007_core::intInRange($pObject->internal['maxPages'], 1, 100);
 		$bUseCache = self::autoCache_fh001($pObject, $pObject->ctrlVars);
 
 			// $showResultCount determines how the results of the pagerowser will be shown.
@@ -987,11 +968,7 @@ class tx_div2007_alpha5 {
 				$pagefloat = ceil(($maxPages - 1)/2);
 			} else {
 				// pagefloat set as integer. 0 = left, value >= $pObject->internal['maxPages'] = right
-				$pagefloat = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($pObject->internal['pagefloat'], -1, $maxPages-1) :
-						t3lib_div::intInRange($pObject->internal['pagefloat'], -1, $maxPages-1)
-				);
+				$pagefloat = tx_div2007_core::intInRange($pObject->internal['pagefloat'], -1, $maxPages-1);
 			}
 		} else {
 			$pagefloat = -1; // pagefloat disabled
@@ -1046,11 +1023,7 @@ class tx_div2007_alpha5 {
 				$firstPage = max(0, $lastPage - $maxPages);
 			} else {
 				$firstPage = 0;
-				$lastPage = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($totalPages, 1, $maxPages) :
-						t3lib_div::intInRange($totalPages, 1, $maxPages)
-				);
+				$lastPage = tx_div2007_core::intInRange($totalPages, 1, $maxPages);
 			}
 			$links=array();
 
@@ -1210,17 +1183,9 @@ class tx_div2007_alpha5 {
 			// Initializing variables:
 		$pointer = intval($pObject->ctrlVars[$pointerName]);
 		$count = intval($pObject->internal['resCount']);
-		$limit = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['limit'], 1, 1000) :
-				t3lib_div::intInRange($pObject->internal['limit'], 1, 1000)
-		);
+		$limit = tx_div2007_core::intInRange($pObject->internal['limit'], 1, 1000);
 		$totalPages = ceil($count/$limit);
-		$maxPages = (
-			class_exists('t3lib_utility_Math') ?
-				t3lib_utility_Math::forceIntegerInRange($pObject->internal['maxPages'], 1, 100) :
-				t3lib_div::intInRange($pObject->internal['maxPages'], 1, 100)
-		);
+		$maxPages = tx_div2007_core::intInRange($pObject->internal['maxPages'], 1, 100);
 		$bUseCache = self::autoCache_fh001($pObject, $pObject->ctrlVars);
 
 			// $showResultCount determines how the results of the pagerowser will be shown.
@@ -1240,11 +1205,7 @@ class tx_div2007_alpha5 {
 				$pagefloat = ceil(($maxPages - 1)/2);
 			} else {
 				// pagefloat set as integer. 0 = left, value >= $pObject->internal['maxPages'] = right
-				$pagefloat = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($pObject->internal['pagefloat'], -1, $maxPages-1) :
-						t3lib_div::intInRange($pObject->internal['pagefloat'], -1, $maxPages-1)
-				);
+				$pagefloat = tx_div2007_core::intInRange($pObject->internal['pagefloat'], -1, $maxPages-1);
 			}
 		} else {
 			$pagefloat = -1; // pagefloat disabled
@@ -1299,11 +1260,7 @@ class tx_div2007_alpha5 {
 				$firstPage = max(0,$lastPage-$maxPages);
 			} else {
 				$firstPage = 0;
-				$lastPage = (
-					class_exists('t3lib_utility_Math') ?
-						t3lib_utility_Math::forceIntegerInRange($totalPages, 1, $maxPages) :
-						t3lib_div::intInRange($totalPages, 1, $maxPages)
-				);
+				$lastPage = tx_div2007_core::intInRange($totalPages, 1, $maxPages);
 			}
 			$links=array();
 
@@ -1520,6 +1477,125 @@ class tx_div2007_alpha5 {
 		}
 
 		return $csConvObj;
+	}
+
+
+	static public function initFE () {
+
+		/** @var $TSFE \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController */
+		$TSFE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+			'TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController',
+			$TYPO3_CONF_VARS,
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('id'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('type'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('no_cache'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('cHash'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('jumpurl'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('MP'),
+			\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('RDCT')
+		);
+
+		if ($TYPO3_CONF_VARS['FE']['pageUnavailable_force']
+			&& !\TYPO3\CMS\Core\Utility\GeneralUtility::cmpIP(
+				\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REMOTE_ADDR'),
+				$TYPO3_CONF_VARS['SYS']['devIPmask'])
+		) {
+			$TSFE->pageUnavailableAndExit('This page is temporarily unavailable.');
+		}
+
+		$TSFE->connectToDB();
+		$TSFE->sendRedirect();
+
+		// Output compression
+		// Remove any output produced until now
+		ob_clean();
+		if ($TYPO3_CONF_VARS['FE']['compressionLevel'] && extension_loaded('zlib')) {
+			if (\TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger($TYPO3_CONF_VARS['FE']['compressionLevel'])) {
+				// Prevent errors if ini_set() is unavailable (safe mode)
+				@ini_set('zlib.output_compression_level', $TYPO3_CONF_VARS['FE']['compressionLevel']);
+			}
+			ob_start(array(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\Utility\\CompressionUtility'), 'compressionOutputHandler'));
+		}
+
+		// FE_USER
+		$TT->push('Front End user initialized', '');
+		/** @var $TSFE \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController */
+		$TSFE->initFEuser();
+		$TT->pull();
+
+		// BE_USER
+		/** @var $BE_USER \TYPO3\CMS\Backend\FrontendBackendUserAuthentication */
+		$BE_USER = $TSFE->initializeBackendUser();
+
+		// Process the ID, type and other parameters
+		// After this point we have an array, $page in TSFE, which is the page-record of the current page, $id
+		$TT->push('Process ID', '');
+		// Initialize admin panel since simulation settings are required here:
+		if ($TSFE->isBackendUserLoggedIn()) {
+			$BE_USER->initializeAdminPanel();
+			\TYPO3\CMS\Core\Core\Bootstrap::getInstance()->loadExtensionTables(TRUE);
+		} else {
+			\TYPO3\CMS\Core\Core\Bootstrap::getInstance()->loadCachedTca();
+		}
+		$TSFE->checkAlternativeIdMethods();
+		$TSFE->clear_preview();
+		$TSFE->determineId();
+		// Now, if there is a backend user logged in and he has NO access to this page, then re-evaluate the id shown!
+		if ($TSFE->isBackendUserLoggedIn() && (!$BE_USER->extPageReadAccess($TSFE->page) || \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('ADMCMD_noBeUser'))) {
+			// \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('ADMCMD_noBeUser') is placed here because
+			// \TYPO3\CMS\Version\Hook\PreviewHook might need to know if a backend user is logged in!
+			// Remove user
+			unset($BE_USER);
+			$TSFE->beUserLogin = 0;
+			// Re-evaluate the page-id.
+			$TSFE->checkAlternativeIdMethods();
+			$TSFE->clear_preview();
+			$TSFE->determineId();
+		}
+		$TSFE->makeCacheHash();
+		$TT->pull();
+
+		// Admin Panel & Frontend editing
+		if ($TSFE->isBackendUserLoggedIn()) {
+			$BE_USER->initializeFrontendEdit();
+			if ($BE_USER->adminPanel instanceof \TYPO3\CMS\Frontend\View\AdminPanelView) {
+				\TYPO3\CMS\Core\Core\Bootstrap::getInstance()->initializeLanguageObject();
+			}
+			if ($BE_USER->frontendEdit instanceof \TYPO3\CMS\Core\FrontendEditing\FrontendEditingController) {
+				$BE_USER->frontendEdit->initConfigOptions();
+			}
+		}
+
+		// Starts the template
+		$TT->push('Start Template', '');
+		$TSFE->initTemplate();
+		$TT->pull();
+		// Get from cache
+		$TT->push('Get Page from cache', '');
+		$TSFE->getFromCache();
+		$TT->pull();
+		// Get config if not already gotten
+		// After this, we should have a valid config-array ready
+		$TSFE->getConfigArray();
+		// Convert POST data to internal "renderCharset" if different from the metaCharset
+		$TSFE->convPOSTCharset();
+		// Setting language and locale
+		$TT->push('Setting language and locale', '');
+		$TSFE->settingLanguage();
+		$TSFE->settingLocale();
+		$TT->pull();
+
+		// Hook for end-of-frontend
+		$TSFE->hook_eofe();
+		// Finish timetracking
+		$TT->pull();
+		// Check memory usage
+		\TYPO3\CMS\Core\Utility\MonitorUtility::peakMemoryUsage();
+
+		// Debugging Output
+		if (isset($error) && is_object($error) && @is_callable(array($error, 'debugOutput'))) {
+			$error->debugOutput();
+		}
 	}
 }
 

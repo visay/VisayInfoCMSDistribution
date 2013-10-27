@@ -14,8 +14,13 @@ $GLOBALS['TYPO3_CONF_VARS']['BE']['adminOnly'] = '2';
 $GLOBALS['TYPO3_CONF_VARS']['BE']['installToolPassword'] = '';
 
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['allowLocalInstall'] = '0';
-//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'] = 'a:4:{s:12:"hideOtherDBs";s:1:"1";s:9:"uploadDir";s:21:"uploads/tx_phpmyadmin";s:10:"allowedIps";s:0:"";s:12:"useDevIpMask";s:1:"0";}';
-//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['extension_builder'] = 'a:3:{s:15:"enableRoundtrip";s:1:"0";s:15:"backupExtension";s:1:"1";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}';
+
+//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['extension_builder'] = 'a:3:{s:15:"enableRoundtrip";s:0:"";s:15:"backupExtension";s:1:"1";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}';
+//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extListArray'][] = 'extension_builder';
+
+//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'] = 'a:5:{s:12:"hideOtherDBs";s:1:"1";s:9:"uploadDir";s:21:"uploads/tx_phpmyadmin";s:10:"allowedIps";s:0:"";s:12:"useDevIpMask";s:1:"0";s:10:"ajaxEnable";s:1:"1";}';
+//$GLOBALS['TYPO3_CONF_VARS']['EXT']['extListArray'][] = 'phpmyadmin';
+
 //$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpunit'] = 'a:6:{s:17:"excludeextensions";s:8:"lib, div";s:12:"composerpath";s:0:"";s:13:"selenium_host";s:9:"localhost";s:13:"selenium_port";s:4:"4444";s:16:"selenium_browser";s:8:"*firefox";s:19:"selenium_browserurl";s:0:"";}';
 //$GLOBALS['TYPO3_CONF_VARS']['EXT']['extListArray'][] = 'phpunit';
 
@@ -25,6 +30,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] = '';
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'Visay Info - Live System';
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = '0';
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = 'error_log,,3';
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = '3';
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = '3';
 
 ?>

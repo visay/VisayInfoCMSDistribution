@@ -27,7 +27,7 @@
 /**
  * store for variables used in your extensions
  *
- * $Id: class.tx_div2007_store.php 158 2012-10-10 11:10:26Z franzholz $
+ * $Id: class.tx_div2007_store.php 207 2013-09-26 07:21:48Z franzholz $
  *
  * class tslib_cObj	All main TypoScript features, rendering of content objects (cObjects). This class is the backbone of TypoScript Template rendering.
  *

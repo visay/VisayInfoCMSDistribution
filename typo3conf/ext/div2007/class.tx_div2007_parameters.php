@@ -28,7 +28,7 @@
  * @author     Elmar Hinz <elmar.hinz@team-red.net>
  * @copyright  2006-2011 Elmar Hinz
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    SVN: $Id: class.tx_div2007_parameters.php 151 2012-08-16 12:11:25Z franzholz $
+ * @version    SVN: $Id: class.tx_div2007_parameters.php 197 2013-09-10 09:42:56Z franzholz $
  * @since      0.1
  */
 
@@ -58,7 +58,7 @@ class tx_div2007_parameters extends tx_div2007_object {
 	 */
 	public function tx_div2007_parameters ($controller) {
 		parent::tx_div2007_object($controller);
-		$this->setArray(t3lib_div::_GPmerged($controller->getDesignator()));
+		$this->setArray(tx_div2007_div::_GPmerged($controller->getDesignator()));
 		// Initialize the cHash system if there are parameters available
 		if ($GLOBALS['TSFE'] && count($parameters)) {
 			$GLOBALS['TSFE']->reqCHash();
