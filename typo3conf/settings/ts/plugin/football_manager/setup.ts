@@ -34,4 +34,12 @@ plugin.tx_footballmanager._CSS_DEFAULT_STYLE (
 	.tx-football-manager table select {
 		width: 100%;
 	}
+
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		.tx-football-manager #confirm-form,
+		.tx-football-manager #decline-form {
+			top: 10%;
+		}
+	}
 )
