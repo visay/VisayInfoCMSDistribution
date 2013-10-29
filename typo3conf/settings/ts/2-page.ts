@@ -89,13 +89,13 @@ page.headerData.20 {
 }
 
 # Description
-page.meta.description = Personal information about me <Visay Keo>, my recent activities and tips/tricks I often need but always forget. I hope this can also help others working in similar area of TYPO3, Web Development and Project Management. 
+page.meta.description = Visay.Info manages the schedule of អេតចាយ United football team's matches. Additionally with some tips and tricks Visay needs for his daily work that relate with web development and TYPO3. And lastly, some photos from his short trips around.
 page.meta.description {
 	override.field = description
 }
 
 # Keywords
-page.meta.keywords = visay, keo, visay keo, typo3, typoscript, flow, typo3flow, extbase, fluid, neos, php, database, web server, web, web development, developer, web developer, project manager, project management, cambodia, khmer, typo3 cambodia, ktug, typo3 usergroup, khmer typo3 usergroup
+page.meta.keywords = visay, keo, visay keo, football, soccer, typo3, typoscript, flow, typo3flow, extbase, fluid, neos, php, database, web server, web, web development, developer, web developer, project manager, project management, agile, scrum, kanban, cambodia, khmer, typo3 cambodia, ktug, typo3 usergroup, khmer typo3 usergroup
 page.meta.keywords {
 	stdWrap.case = lower
 	override.field = keywords
