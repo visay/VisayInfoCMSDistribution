@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "afa93d37c704d38de346d22c49270b8b",
+    "hash": "7aa4f298f41201f54f21d569ecaa61bd",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c"
+                "reference": "c87cfc35882eb50df3eef1734bfa52fbcd6c782c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d792632d27e1980d921cbbba12eab7b888338d4c",
-                "reference": "d792632d27e1980d921cbbba12eab7b888338d4c",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c87cfc35882eb50df3eef1734bfa52fbcd6c782c",
+                "reference": "c87cfc35882eb50df3eef1734bfa52fbcd6c782c",
                 "shasum": ""
             },
             "replace": {
@@ -46,7 +46,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
+                    "homepage": "http://dontkry.com",
                     "role": "Developer"
                 }
             ],
@@ -61,6 +61,7 @@
                 "codeigniter",
                 "concrete5",
                 "drupal",
+                "elgg",
                 "fuelphp",
                 "installer",
                 "joomla",
@@ -77,27 +78,27 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-10-24 16:13:49"
+            "time": "2013-12-24 18:04:46"
         },
         {
             "name": "twitter/bootstrap",
             "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:twbs/bootstrap.git",
+                "url": "https://github.com/twbs/bootstrap.git",
                 "reference": "v2.3.2"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/dropbox_carousel",
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:visay/dropbox_carousel.git",
+                "url": "https://github.com/visay/dropbox_carousel.git",
                 "reference": "master"
             },
-            "type": "typo3-flow-package",
+            "type": "typo3-cms-extension",
             "time": "2013-09-14 16:10:45"
         },
         {
@@ -105,10 +106,10 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:visay/fal_dropbox.git",
+                "url": "https://github.com/visay/fal_dropbox.git",
                 "reference": "master"
             },
-            "type": "typo3-flow-package",
+            "type": "typo3-cms-extension",
             "time": "2013-08-12 13:50:00"
         },
         {
@@ -116,10 +117,10 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:visay/football_manager.git",
+                "url": "https://github.com/visay/football_manager.git",
                 "reference": "master"
             },
-            "type": "typo3-flow-package",
+            "type": "typo3-cms-extension",
             "time": "2013-12-07 10:24:50"
         },
         {
@@ -130,7 +131,7 @@
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
                 "reference": "trunk"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/news",
@@ -140,7 +141,7 @@
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
                 "reference": "2.2.1"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/realurl",
@@ -150,7 +151,7 @@
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
                 "reference": "30dcedd4ceb863c2291b80126c91242edc59aff0"
             },
-            "type": "typo3-flow-package",
+            "type": "typo3-cms-extension",
             "time": "2013-10-09 10:52:43"
         },
         {
@@ -161,7 +162,7 @@
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
                 "reference": "Version-3-0-2"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/static_info_tables",
@@ -171,7 +172,7 @@
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
                 "reference": "Version-6-0-5"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/templavoila",
@@ -181,7 +182,7 @@
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
                 "reference": "1_8_0"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         }
     ],
     "packages-dev": [
@@ -193,8 +194,8 @@
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/extension_builder.git",
                 "reference": "master"
             },
-            "type": "typo3-flow-package",
-            "time": "2013-12-02 08:30:35"
+            "type": "typo3-cms-extension",
+            "time": "2014-01-15 20:33:22"
         },
         {
             "name": "typo3cms/phpmyadmin",
@@ -204,7 +205,7 @@
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
                 "reference": "trunk"
             },
-            "type": "typo3-flow-package"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/phpunit",
@@ -214,8 +215,8 @@
                 "url": "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
                 "reference": "master"
             },
-            "type": "typo3-flow-package",
-            "time": "2013-11-29 15:56:46"
+            "type": "typo3-cms-extension",
+            "time": "2014-01-07 16:03:16"
         }
     ],
     "aliases": [
@@ -223,11 +224,11 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "typo3cms/football_manager": 20,
         "typo3cms/realurl": 20,
-        "typo3cms/dropbox_carousel": 20,
-        "typo3cms/fal_dropbox": 20,
         "typo3cms/formhandler": 20,
+        "typo3cms/fal_dropbox": 20,
+        "typo3cms/dropbox_carousel": 20,
+        "typo3cms/football_manager": 20,
         "typo3cms/phpmyadmin": 20,
         "typo3cms/extension_builder": 20,
         "typo3cms/phpunit": 20

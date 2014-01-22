@@ -19,16 +19,16 @@
 	],
 	"require" : {
 		"composer/installers" : "*",
-		"typo3cms/football_manager" : "dev-master",
-		"typo3cms/realurl" : "dev-master",
-		"typo3cms/static_info_tables" : "6.0.5",
 		"php" : ">=5.3.7",
-		"typo3cms/dropbox_carousel" : "dev-master",
+		"typo3cms/static_info_tables" : "6.0.5",
+		"typo3cms/realurl" : "dev-master",
+		"typo3cms/templavoila" : "1.8.0",
 		"typo3cms/news" : "2.2.1",
 		"typo3cms/sr_feuser_register" : "3.0.2",
-		"typo3cms/templavoila" : "1.8.0",
-		"typo3cms/fal_dropbox" : "dev-master",
 		"typo3cms/formhandler" : "dev-trunk",
+		"typo3cms/fal_dropbox" : "dev-master",
+		"typo3cms/dropbox_carousel" : "dev-master",
+		"typo3cms/football_manager" : "dev-master",
 		"twitter/bootstrap" : "2.3.2"
 	},
 	"require-dev" : {
@@ -42,7 +42,7 @@
 			"package" : {
 				"name" : "typo3cms/realurl",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
@@ -54,7 +54,7 @@
 			"package" : {
 				"name" : "typo3cms/news",
 				"version" : "2.2.1",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3v4/Extensions/news.git",
@@ -66,10 +66,10 @@
 			"package" : {
 				"name" : "typo3cms/football_manager",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git@github.com:visay/football_manager.git",
+					"url" : "https://github.com/visay/football_manager.git",
 					"reference" : "master"
 				}
 			}
@@ -78,7 +78,7 @@
 			"package" : {
 				"name" : "typo3cms/templavoila",
 				"version" : "1.8.0",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
@@ -90,10 +90,10 @@
 			"package" : {
 				"name" : "typo3cms/fal_dropbox",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git@github.com:visay/fal_dropbox.git",
+					"url" : "https://github.com/visay/fal_dropbox.git",
 					"reference" : "master"
 				}
 			}
@@ -102,7 +102,7 @@
 			"package" : {
 				"name" : "typo3cms/static_info_tables",
 				"version" : "6.0.5",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
@@ -114,7 +114,7 @@
 			"package" : {
 				"name" : "typo3cms/formhandler",
 				"version" : "trunk",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
@@ -126,7 +126,7 @@
 			"package" : {
 				"name" : "typo3cms/sr_feuser_register",
 				"version" : "3.0.2",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
@@ -138,10 +138,10 @@
 			"package" : {
 				"name" : "typo3cms/dropbox_carousel",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git@github.com:visay/dropbox_carousel.git",
+					"url" : "https://github.com/visay/dropbox_carousel.git",
 					"reference" : "master"
 				}
 			}
@@ -150,10 +150,10 @@
 			"package" : {
 				"name" : "twitter/bootstrap",
 				"version" : "2.3.2",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git@github.com:twbs/bootstrap.git",
+					"url" : "https://github.com/twbs/bootstrap.git",
 					"reference" : "v2.3.2"
 				}
 			}
@@ -162,7 +162,7 @@
 			"package" : {
 				"name" : "typo3cms/phpmyadmin",
 				"version" : "trunk",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
@@ -174,7 +174,7 @@
 			"package" : {
 				"name" : "typo3cms/extension_builder",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3v4/Extensions/extension_builder.git",
@@ -186,7 +186,7 @@
 			"package" : {
 				"name" : "typo3cms/phpunit",
 				"version" : "master",
-				"type" : "typo3-flow-package",
+				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
@@ -201,20 +201,6 @@
 	},
 	"extra" : {
 		"installer-paths" : {
-			"typo3conf/ext/{$name}/" : [
-				"typo3cms/realurl",
-				"typo3cms/news",
-				"typo3cms/templavoila",
-				"typo3cms/fal_dropbox",
-				"typo3cms/static_info_tables",
-				"typo3cms/formhandler",
-				"typo3cms/sr_feuser_register",
-				"typo3cms/dropbox_carousel",
-				"typo3cms/football_manager",
-				"typo3cms/phpmyadmin",
-				"typo3cms/extension_builder",
-				"typo3cms/phpunit"
-			],
 			"fileadmin/templates/{$name}/" : [
 				"twitter/bootstrap"
 			]
