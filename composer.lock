@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7aa4f298f41201f54f21d569ecaa61bd",
+    "hash": "42d5578eeb5db6b8b4daf77a97285335",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.8",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c87cfc35882eb50df3eef1734bfa52fbcd6c782c"
+                "reference": "26d37e307f9aa6e2e81806a6525666f8ab5ba0ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c87cfc35882eb50df3eef1734bfa52fbcd6c782c",
-                "reference": "c87cfc35882eb50df3eef1734bfa52fbcd6c782c",
+                "url": "https://api.github.com/repos/composer/installers/zipball/26d37e307f9aa6e2e81806a6525666f8ab5ba0ff",
+                "reference": "26d37e307f9aa6e2e81806a6525666f8ab5ba0ff",
                 "shasum": ""
             },
             "replace": {
@@ -46,20 +46,24 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
-                "TYPO3 CMS",
-                "TYPO3 Flow",
-                "TYPO3 Neos",
+                "Craft",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
+                "WolfCMS",
                 "agl",
+                "annotatecms",
                 "cakephp",
                 "codeigniter",
                 "concrete5",
+                "croogo",
                 "drupal",
                 "elgg",
                 "fuelphp",
@@ -67,18 +71,23 @@
                 "joomla",
                 "kohana",
                 "laravel",
-                "li3",
                 "lithium",
+                "magento",
                 "mako",
+                "mediawiki",
                 "modulework",
                 "phpbb",
+                "piwik",
                 "ppi",
+                "shopware",
                 "silverstripe",
                 "symfony",
+                "typo3",
                 "wordpress",
-                "zend"
+                "zend",
+                "zikula"
             ],
-            "time": "2013-12-24 18:04:46"
+            "time": "2014-04-09 16:12:43"
         },
         {
             "name": "twitter/bootstrap",
@@ -121,7 +130,7 @@
                 "reference": "master"
             },
             "type": "typo3-cms-extension",
-            "time": "2013-12-07 10:24:50"
+            "time": "2014-02-02 06:21:10"
         },
         {
             "name": "typo3cms/formhandler",
@@ -138,7 +147,7 @@
             "version": "2.2.1",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3v4/Extensions/news.git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
                 "reference": "2.2.1"
             },
             "type": "typo3-cms-extension"
@@ -148,7 +157,7 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/realurl.git",
                 "reference": "30dcedd4ceb863c2291b80126c91242edc59aff0"
             },
             "type": "typo3-cms-extension",
@@ -179,7 +188,7 @@
             "version": "1.8.0",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/templavoila.git",
                 "reference": "1_8_0"
             },
             "type": "typo3-cms-extension"
@@ -191,11 +200,11 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3v4/Extensions/extension_builder.git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
                 "reference": "master"
             },
             "type": "typo3-cms-extension",
-            "time": "2014-01-15 20:33:22"
+            "time": "2014-04-28 23:12:01"
         },
         {
             "name": "typo3cms/phpmyadmin",
@@ -212,11 +221,11 @@
             "version": "master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/phpunit.git",
                 "reference": "master"
             },
             "type": "typo3-cms-extension",
-            "time": "2014-01-07 16:03:16"
+            "time": "2014-04-12 09:04:07"
         }
     ],
     "aliases": [

@@ -1,7 +1,8 @@
 {
 	"name" : "typo3cms/visay-info",
 	"description" : "TYPO3 CMS for visay.info website.",
-	"authors" : [{
+	"authors" : [
+		{
 			"name" : "Visay Keo",
 			"email" : "keo@visay.info",
 			"homepage" : "http://www.visay.info"
@@ -37,7 +38,8 @@
 		"typo3cms/phpunit" : "dev-master"
 	},
 	"minimum-stability" : "stable",
-	"repositories" : [{
+	"repositories" : [
+		{
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/realurl",
@@ -45,7 +47,7 @@
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3v4/Extensions/realurl.git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/realurl.git",
 					"reference" : "30dcedd4ceb863c2291b80126c91242edc59aff0"
 				}
 			}
@@ -57,7 +59,7 @@
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3v4/Extensions/news.git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
 					"reference" : "2.2.1"
 				}
 			}
@@ -81,7 +83,7 @@
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3v4/Extensions/templavoila.git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/templavoila.git",
 					"reference" : "1_8_0"
 				}
 			}
@@ -177,7 +179,7 @@
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3v4/Extensions/extension_builder.git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
 					"reference" : "master"
 				}
 			}
@@ -189,7 +191,7 @@
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3v4/Extensions/phpunit.git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/phpunit.git",
 					"reference" : "master"
 				}
 			}
