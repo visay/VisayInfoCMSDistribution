@@ -1,5 +1,5 @@
 !function ($) {
-	$(function(){
+	$(function () {
 
 		var $window = $(window)
 
@@ -9,30 +9,31 @@
 			$('#search').removeClass('nav-collapse collapse');
 		}
 
-			// make code pretty
+		// make code pretty
 		window.prettyPrint && prettyPrint();
-			// carousel demo
+		// carousel demo
 		$('#myCarousel').carousel();
 
-			// swipe slideshow left/right in touch device
-		$(" #myCarousel ").swiperight(function() {
+		// swipe slideshow left/right in touch device
+		$(" #myCarousel ").swiperight(function () {
 			$(" #myCarousel ").carousel('prev');
 		});
-		$(" #myCarousel ").swipeleft(function() {
+		$(" #myCarousel ").swipeleft(function () {
 			$(" #myCarousel ").carousel('next');
 		});
 
-			// Onclick activate comment, load disqus comment function
-		$('#comments .activate').click(function(e) {
-			e.preventDefault();
+		// Onclick activate comment, load disqus comment function
+		//$('#comments .activate').click(function(e) {
+		if ($('#comments .activate').length > 0) {
+			//e.preventDefault();
 			loadComments('comments', 'visay');
-		});
+		//});
+		}
 
-			// Filter the player list on selection change
-		$('.tx-football-manager #player-selected').on('change', function() {
+		// Filter the player list on selection change
+		$('.tx-football-manager #player-selected').on('change', function () {
 			$('.tx-football-manager #player-filter').submit();
 		});
-
 	})
 }(window.jQuery);
 
@@ -44,15 +45,17 @@
  * @param developer
  */
 function loadComments(container_id, shortname, identifier, developer) {
-		// CONFIGURATION VARIABLES
+	// CONFIGURATION VARIABLES
 	window.disqus_container_id = container_id;
 	window.disqus_developer = developer ? 1 : 0;
 	window.disqus_shortname = shortname; // required
 	if (identifier) window.disqus_identifier = identifier;
 
-		// DON'T EDIT BELOW THIS LINE
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	// DON'T EDIT BELOW THIS LINE
+	(function () {
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
 		dsq.src = 'http://' + shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	})();
