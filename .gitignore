@@ -20,6 +20,7 @@
 /t3lib
 /typo3
 /typo3_src
+/cgi-bin/
 
 *~
 *.swp
