@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "42d5578eeb5db6b8b4daf77a97285335",
+    "hash": "d5b5ca9edacb7a6de438cda75a5fa6b9",
     "packages": [
         {
             "name": "composer/installers",
@@ -134,52 +134,51 @@
         },
         {
             "name": "typo3cms/formhandler",
-            "version": "trunk",
+            "version": "1.7.0",
             "source": {
                 "type": "svn",
-                "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
-                "reference": "trunk"
+                "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/tags/",
+                "reference": "v1.7.0"
             },
             "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/news",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
-                "reference": "2.2.1"
+                "reference": "2.3.0"
             },
             "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/realurl",
-            "version": "master",
+            "version": "1.12.8",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3CMS/Extensions/realurl.git",
-                "reference": "30dcedd4ceb863c2291b80126c91242edc59aff0"
+                "reference": "1_12_8"
             },
-            "type": "typo3-cms-extension",
-            "time": "2013-10-09 10:52:43"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/sr_feuser_register",
-            "version": "3.0.2",
+            "version": "3.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
-                "reference": "Version-3-0-2"
+                "reference": "Version-3-1-2"
             },
             "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/static_info_tables",
-            "version": "6.0.5",
+            "version": "6.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
-                "reference": "Version-6-0-5"
+                "reference": "Version-6-1-0"
             },
             "type": "typo3-cms-extension"
         },
@@ -196,36 +195,45 @@
     ],
     "packages-dev": [
         {
+            "name": "typo3cms/devlog",
+            "version": "2.11.1",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/TYPO3CMS/Extensions/devlog.git",
+                "reference": "9a70b962f555e21e1db3342e9c574df667c63217"
+            },
+            "type": "typo3-cms-extension"
+        },
+        {
             "name": "typo3cms/extension_builder",
-            "version": "master",
+            "version": "6.1-dev",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
-                "reference": "master"
+                "reference": "beac07a873edcbb18a7c916724d430309b8ba8f1"
             },
             "type": "typo3-cms-extension",
-            "time": "2014-04-28 23:12:01"
+            "time": "2014-05-07 09:24:34"
         },
         {
             "name": "typo3cms/phpmyadmin",
-            "version": "trunk",
+            "version": "4.18.1",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
-                "reference": "trunk"
+                "reference": "trunk@84112"
             },
             "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/phpunit",
-            "version": "master",
+            "version": "3.7.22",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3CMS/Extensions/phpunit.git",
-                "reference": "master"
+                "reference": "3.7.22"
             },
-            "type": "typo3-cms-extension",
-            "time": "2014-04-12 09:04:07"
+            "type": "typo3-cms-extension"
         }
     ],
     "aliases": [
@@ -233,14 +241,10 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "typo3cms/realurl": 20,
-        "typo3cms/formhandler": 20,
         "typo3cms/fal_dropbox": 20,
         "typo3cms/dropbox_carousel": 20,
         "typo3cms/football_manager": 20,
-        "typo3cms/phpmyadmin": 20,
-        "typo3cms/extension_builder": 20,
-        "typo3cms/phpunit": 20
+        "typo3cms/extension_builder": 20
     },
     "platform": {
         "php": ">=5.3.7"

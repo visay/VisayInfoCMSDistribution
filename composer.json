@@ -21,21 +21,22 @@
 	"require" : {
 		"composer/installers" : "*",
 		"php" : ">=5.3.7",
-		"typo3cms/static_info_tables" : "6.0.5",
-		"typo3cms/realurl" : "dev-master",
+		"typo3cms/static_info_tables" : "6.1.0",
+		"typo3cms/realurl" : "1.12.8",
 		"typo3cms/templavoila" : "1.8.0",
-		"typo3cms/news" : "2.2.1",
-		"typo3cms/sr_feuser_register" : "3.0.2",
-		"typo3cms/formhandler" : "dev-trunk",
+		"typo3cms/news" : "2.3.0",
+		"typo3cms/sr_feuser_register" : "3.1.2",
+		"typo3cms/formhandler" : "1.7.0",
 		"typo3cms/fal_dropbox" : "dev-master",
 		"typo3cms/dropbox_carousel" : "dev-master",
 		"typo3cms/football_manager" : "dev-master",
 		"twitter/bootstrap" : "2.3.2"
 	},
 	"require-dev" : {
-		"typo3cms/phpmyadmin" : "dev-trunk",
-		"typo3cms/extension_builder" : "dev-master",
-		"typo3cms/phpunit" : "dev-master"
+		"typo3cms/phpmyadmin" : "4.18.1",
+		"typo3cms/extension_builder" : "6.1-dev",
+		"typo3cms/phpunit" : "3.7.22",
+		"typo3cms/devlog" : "2.11.1"
 	},
 	"minimum-stability" : "stable",
 	"repositories" : [
@@ -43,24 +44,24 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/realurl",
-				"version" : "master",
+				"version" : "1.12.8",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/realurl.git",
-					"reference" : "30dcedd4ceb863c2291b80126c91242edc59aff0"
+					"reference" : "1_12_8"
 				}
 			}
 		}, {
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/news",
-				"version" : "2.2.1",
+				"version" : "2.3.0",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
-					"reference" : "2.2.1"
+					"reference" : "2.3.0"
 				}
 			}
 		}, {
@@ -103,36 +104,36 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/static_info_tables",
-				"version" : "6.0.5",
+				"version" : "6.1.0",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/static_info_tables/tags/",
-					"reference" : "Version-6-0-5"
+					"reference" : "Version-6-1-0"
 				}
 			}
 		}, {
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/formhandler",
-				"version" : "trunk",
+				"version" : "1.7.0",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
-					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/",
-					"reference" : "trunk"
+					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/tags/",
+					"reference" : "v1.7.0"
 				}
 			}
 		}, {
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/sr_feuser_register",
-				"version" : "3.0.2",
+				"version" : "3.1.2",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/sr_feuser_register/tags/",
-					"reference" : "Version-3-0-2"
+					"reference" : "Version-3-1-2"
 				}
 			}
 		}, {
@@ -163,36 +164,48 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/phpmyadmin",
-				"version" : "trunk",
+				"version" : "4.18.1",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/phpmyadmin/",
-					"reference" : "trunk"
+					"reference" : "trunk@84112"
 				}
 			}
 		}, {
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/extension_builder",
-				"version" : "master",
+				"version" : "6.1-dev",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
-					"reference" : "master"
+					"reference" : "beac07a873edcbb18a7c916724d430309b8ba8f1"
 				}
 			}
 		}, {
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/phpunit",
-				"version" : "master",
+				"version" : "3.7.22",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/phpunit.git",
-					"reference" : "master"
+					"reference" : "3.7.22"
+				}
+			}
+		}, {
+			"type" : "package",
+			"package" : {
+				"name" : "typo3cms/devlog",
+				"version" : "2.11.1",
+				"type" : "typo3-cms-extension",
+				"source" : {
+					"type" : "git",
+					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/devlog.git",
+					"reference" : "9a70b962f555e21e1db3342e9c574df667c63217"
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-/fileadmin/templates/bootstrap
+/fileadmin/templates/bootstrap/
 /typo3conf/ext/*
 /typo3conf/l10n/*
 
@@ -13,7 +13,8 @@
 
 /.buildpath
 /.project
-/.settings
+/.settings/
+/.idea/
 
 /index.php
 /t3lib
