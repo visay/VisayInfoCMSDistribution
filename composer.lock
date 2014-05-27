@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "d5b5ca9edacb7a6de438cda75a5fa6b9",
+    "hash": "2bdc655405269a9e80a75d762a41684c",
     "packages": [
         {
             "name": "composer/installers",
@@ -46,7 +47,7 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama",
+                    "homepage": "http://dontkry.com",
                     "role": "Developer"
                 }
             ],
@@ -134,11 +135,11 @@
         },
         {
             "name": "typo3cms/formhandler",
-            "version": "1.7.0",
+            "version": "2.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/tags/",
-                "reference": "v1.7.0"
+                "reference": "v2.0.0"
             },
             "type": "typo3-cms-extension"
         },
@@ -184,11 +185,11 @@
         },
         {
             "name": "typo3cms/templavoila",
-            "version": "1.8.0",
+            "version": "1.9.0-dev",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/TYPO3CMS/Extensions/templavoila.git",
-                "reference": "1_8_0"
+                "url": "https://github.com/wouter90/templavoila.git",
+                "reference": "templavoila_1-9-0"
             },
             "type": "typo3-cms-extension"
         }
@@ -241,6 +242,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "typo3cms/templavoila": 20,
         "typo3cms/fal_dropbox": 20,
         "typo3cms/dropbox_carousel": 20,
         "typo3cms/football_manager": 20,

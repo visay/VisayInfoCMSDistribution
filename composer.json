@@ -23,10 +23,10 @@
 		"php" : ">=5.3.7",
 		"typo3cms/static_info_tables" : "6.1.0",
 		"typo3cms/realurl" : "1.12.8",
-		"typo3cms/templavoila" : "1.8.0",
+		"typo3cms/templavoila" : "1.9.0-dev",
 		"typo3cms/news" : "2.3.0",
 		"typo3cms/sr_feuser_register" : "3.1.2",
-		"typo3cms/formhandler" : "1.7.0",
+		"typo3cms/formhandler" : "2.0.0",
 		"typo3cms/fal_dropbox" : "dev-master",
 		"typo3cms/dropbox_carousel" : "dev-master",
 		"typo3cms/football_manager" : "dev-master",
@@ -80,12 +80,12 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/templavoila",
-				"version" : "1.8.0",
+				"version" : "1.9.0-dev",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
-					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/templavoila.git",
-					"reference" : "1_8_0"
+					"url" : "https://github.com/wouter90/templavoila.git",
+					"reference" : "templavoila_1-9-0"
 				}
 			}
 		}, {
@@ -116,12 +116,12 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/formhandler",
-				"version" : "1.7.0",
+				"version" : "2.0.0",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "svn",
 					"url" : "https://svn.typo3.org/TYPO3v4/Extensions/formhandler/tags/",
-					"reference" : "v1.7.0"
+					"reference" : "v2.0.0"
 				}
 			}
 		}, {
