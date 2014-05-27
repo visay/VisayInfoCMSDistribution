@@ -23,8 +23,8 @@
 		"php" : ">=5.3.7",
 		"typo3cms/static_info_tables" : "6.1.0",
 		"typo3cms/realurl" : "1.12.8",
-		"typo3cms/templavoila" : "1.9.0-dev",
-		"typo3cms/news" : "2.3.0",
+		"typo3cms/templavoila" : "2.0.0-dev",
+		"typo3cms/news" : "3.0.0",
 		"typo3cms/sr_feuser_register" : "3.1.2",
 		"typo3cms/formhandler" : "2.0.0",
 		"typo3cms/fal_dropbox" : "dev-master",
@@ -56,12 +56,12 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/news",
-				"version" : "2.3.0",
+				"version" : "3.0.0",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
-					"reference" : "2.3.0"
+					"reference" : "3.0.0"
 				}
 			}
 		}, {
@@ -80,12 +80,12 @@
 			"type" : "package",
 			"package" : {
 				"name" : "typo3cms/templavoila",
-				"version" : "1.9.0-dev",
+				"version" : "2.0.0-dev",
 				"type" : "typo3-cms-extension",
 				"source" : {
 					"type" : "git",
 					"url" : "https://github.com/wouter90/templavoila.git",
-					"reference" : "templavoila_1-9-0"
+					"reference" : "bf7a2d3ee916a46547b2c1f9fd7fa803e036953e"
 				}
 			}
 		}, {

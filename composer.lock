@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2bdc655405269a9e80a75d762a41684c",
+    "hash": "ab4efcee6d5a33701d05e6c4cfe70551",
     "packages": [
         {
             "name": "composer/installers",
@@ -120,7 +120,7 @@
                 "reference": "master"
             },
             "type": "typo3-cms-extension",
-            "time": "2013-08-12 13:50:00"
+            "time": "2014-05-27 17:48:59"
         },
         {
             "name": "typo3cms/football_manager",
@@ -145,11 +145,11 @@
         },
         {
             "name": "typo3cms/news",
-            "version": "2.3.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/TYPO3CMS/Extensions/news.git",
-                "reference": "2.3.0"
+                "reference": "3.0.0"
             },
             "type": "typo3-cms-extension"
         },
@@ -185,13 +185,14 @@
         },
         {
             "name": "typo3cms/templavoila",
-            "version": "1.9.0-dev",
+            "version": "2.0.0-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wouter90/templavoila.git",
-                "reference": "templavoila_1-9-0"
+                "reference": "bf7a2d3ee916a46547b2c1f9fd7fa803e036953e"
             },
-            "type": "typo3-cms-extension"
+            "type": "typo3-cms-extension",
+            "time": "2014-03-27 22:22:27"
         }
     ],
     "packages-dev": [
