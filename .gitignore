@@ -1,23 +1,15 @@
 /fileadmin/templates/bootstrap/
 /typo3conf/ext/*
-/typo3conf/l10n/*
 
 /typo3conf/AdditionalConfiguration.php
-/typo3conf/deprecation_*
-/typo3conf/ENABLE_INSTALL_TOOL
-/typo3conf/realurl_autoconf.php
-/typo3temp/*
-/uploads/pics/fal-dropbox-*
-/uploads/tx_footballmanager/*
-/fileadmin/_processed_/*
 
-/.buildpath
-/.project
-/.settings/
+/typo3temp/*
+/uploads/tx_footballmanager/*
+/uploads/pics/*
+
 /.idea/
 
 /index.php
-/t3lib
 /typo3
 /typo3_src
 /cgi-bin/
