@@ -434,18 +434,6 @@ return array (
       'packagePath' => 'typo3conf/ext/realurl/',
       'classesPath' => 'Classes/',
     ),
-    'phpmyadmin' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/phpmyadmin/',
-      'classesPath' => 'Classes/',
-    ),
-    'phpunit' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/phpunit/',
-      'classesPath' => 'Classes/',
-    ),
     'news' => 
     array (
       'state' => 'active',
@@ -488,23 +476,12 @@ return array (
       'packagePath' => 'typo3conf/ext/football_manager/',
       'classesPath' => 'Classes/',
     ),
-    'devlog' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/devlog/',
-      'classesPath' => 'Classes/',
-    ),
-    'extension_builder' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/extension_builder/',
-      'classesPath' => 'Classes/',
-    ),
     'formhandler' => 
     array (
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/formhandler/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
     'sys_action' => 
     array (
@@ -513,6 +490,7 @@ return array (
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/sys_action/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
     'indexed_search_mysql' => 
     array (
@@ -521,6 +499,7 @@ return array (
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/indexed_search_mysql/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
     'feedit' => 
     array (
@@ -529,6 +508,7 @@ return array (
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/feedit/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
     'openid' => 
     array (
@@ -537,6 +517,7 @@ return array (
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/openid/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
     'dbal' => 
     array (
@@ -545,6 +526,7 @@ return array (
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/dbal/',
       'classesPath' => 'Classes/',
+      'dependencies' => NULL,
     ),
   ),
   'version' => 4,
