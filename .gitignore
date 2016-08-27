@@ -1,3 +1,5 @@
+/prettygreenplants.com/
+
 /fileadmin/templates/bootstrap/
 /typo3conf/ext/*
 
@@ -6,8 +8,6 @@
 /typo3temp/*
 /uploads/tx_footballmanager/*
 /uploads/pics/*
-
-/.idea/
 
 /index.php
 /typo3
