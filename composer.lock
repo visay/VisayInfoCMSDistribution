@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1058120eac564dd51aeab1cb7112bd39",
-    "content-hash": "b0b976affe9af3901b9b9fb498880ae5",
+    "hash": "cd1820660fde9d1ea4fd4c68ce35ac02",
+    "content-hash": "ac33cca4b72428e8a13ffbc7d76619d1",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -138,10 +138,10 @@
                 "reference": "1d8a0aad7b8e539dd3fba7f494e573df0befc6ea"
             },
             "dist": {
-                "type": "zip",
+                "type": "tar",
                 "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/1d8a0aad7b8e539dd3fba7f494e573df0befc6ea",
                 "reference": "1d8a0aad7b8e539dd3fba7f494e573df0befc6ea",
-                "shasum": ""
+                "shasum": "feb56af83d87cb3bbe8ccac65c2ec28dcbc1c380"
             },
             "require": {
                 "doctrine/instantiator": "1.0.5",
@@ -512,6 +512,33 @@
             ],
             "description": "Docker Compose structure to quickly startup TYPO3 CMS projects",
             "time": "2016-08-06 12:54:15"
+        },
+        {
+            "name": "visay/syncontent",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.web-essentials.asia/visay/syncontent.git",
+                "reference": "038b879d93190f5492e168d4d846e5cd139a92b4"
+            },
+            "bin": [
+                "bin/syncontent"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Visay Keo",
+                    "email": "visay@web-essentials.asia",
+                    "homepage": "http://www.web-essentials.asia",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fetch site content from remote server to local.",
+            "time": "2016-07-28 06:31:07"
         }
     ],
     "aliases": [],

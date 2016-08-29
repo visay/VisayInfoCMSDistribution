@@ -1,0 +1,39 @@
+---
+# tasks file for flow database
+
+  - name: Read remote database info (FLOW_CONTEXT=Production)
+    shell: FLOW_CONTEXT=Production {{ remote_php | default('') }} ./flow configuration:show --type Settings --path TYPO3.Flow.persistence.backendOptions chdir="{{ remote_path }}"
+    register: db_info
+
+  - name: Get remote database host
+    shell: echo "{{ db_info.stdout }}" | grep "host:" | cut -d ' ' -f2
+    register: db_host
+
+  - name: Get remote database name
+    shell: echo "{{ db_info.stdout }}" | grep "dbname:" | cut -d ' ' -f2
+    register: db_name
+
+  - name: Get remote database user
+    shell: echo "{{ db_info.stdout }}" | grep "user:" | cut -d ' ' -f2
+    register: db_user
+
+  - name: Get remote database password
+    shell: echo "{{ db_info.stdout }}" | grep "password:" | cut -d ' ' -f2
+    register: db_pass
+
+  - name: Dump remote database
+    mysql_db: login_host="{{ db_host.stdout }}"
+              login_user="{{ db_user.stdout }}"
+              login_password="{{ db_pass.stdout }}"
+              name="{{ db_name.stdout }}"
+              state=dump
+              target={{ remote_dump }}/{{ db_name.stdout }}.sql
+              encoding=utf8
+              collation=utf8_unicode_ci
+
+  - name: Sync remote database dump to local temp
+    synchronize: mode=pull src="/{{ remote_dump }}/{{ db_name.stdout }}.sql" dest="/tmp/{{ ssh_user }}/db_dump.sql"
+
+  - name: Search and replace content in database dump
+    local_action: replace dest="/tmp/{{ ssh_user }}/db_dump.sql" regexp="{{ item.value.search }}" replace="{{ item.value.replace }}"
+    with_dict: replacement | default({})

@@ -35,7 +35,8 @@
 		"typo3cms/extension_builder" : "6.1-dev",
 		"typo3cms/phpunit" : "3.7.22",
 		"typo3cms/devlog" : "2.11.1",
-		"visay/dockertypo3" : "~2.1"
+		"visay/dockertypo3" : "~2.1",
+		"visay/syncontent" : "~3.1"
 	},
 	"minimum-stability" : "stable",
 	"repositories" : [
