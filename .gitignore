@@ -14,7 +14,8 @@
 /typo3
 /typo3_src
 /cgi-bin/
-/vendor/
+/vendor/*
+!/vendor/visay/
 
 *~
 *.swp
