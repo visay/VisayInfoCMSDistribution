@@ -26,20 +26,12 @@ NC="\033[0m"
 echo
 
 # Detect framework environment
-if (cat ${ROOT_DIR}/composer.lock | grep "dockerflow" > /dev/null); then
-	FRAMEWORK="flow"
-	DATA_DIR="Data/Persistent"
+FRAMEWORK="typo3"
+DATA_DIR="uploads"
 
-	# Use Development context if Flow Context is not set
-	FRAMEWORK_CONTEXT=${FLOW_CONTEXT:=Development}
-fi
-if (cat ${ROOT_DIR}/composer.lock | grep "dockertypo3" > /dev/null); then
-	FRAMEWORK="typo3"
-	DATA_DIR="uploads"
+# Use Development context if TYPO3 Context is not set
+FRAMEWORK_CONTEXT=${TYPO3_CONTEXT:=Development}
 
-	# Use Development context if TYPO3 Context is not set
-	FRAMEWORK_CONTEXT=${TYPO3_CONTEXT:=Development}
-fi
 # If framework is not set anywhere, throw error
 if [ -z "${FRAMEWORK}" ]; then
 	echo -e ${RED}"-> Framework cannot be detected:"${NC}

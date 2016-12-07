@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5719f827048bdd600b2c795a2a9bba9e",
-    "content-hash": "fb371cfe77db7399f2d994c0fd2b709d",
+    "hash": "c878db0e8efa00601de8300d504175e9",
+    "content-hash": "9bf2a29267c6c7b7aa913bbeda119a88",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -70,6 +70,237 @@
                 "reference": "v2.3.2"
             },
             "type": "typo3-cms-extension"
+        },
+        {
+            "name": "typo3-ter/news",
+            "version": "3.0.1",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/news/3.0.1/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": ">= 6.2.2, <= 6.2.99"
+            },
+            "replace": {
+                "news": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/ter": {
+                    "review-state": "insecure"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Georg Ringer",
+                    "email": "typo3@ringerge.org",
+                    "company": "",
+                    "username": "just2b"
+                }
+            ],
+            "description": "Versatile news extension, based on extbase & fluid. Editor friendly, default integration of social sharing and many other features",
+            "time": "2014-06-03 13:35:37"
+        },
+        {
+            "name": "typo3-ter/realurl",
+            "version": "1.12.8",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/realurl/1.12.8/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.3.2, <= 5.999.999",
+                "typo3/cms-core": ">= 4.5.0, <= 6.2.999"
+            },
+            "conflict": {
+                "typo3-ter/cooluri": "*",
+                "typo3-ter/simulatestatic": "*"
+            },
+            "replace": {
+                "realurl": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Dmitry Dulepov",
+                    "email": "dmitry.dulepov@gmail.com",
+                    "company": "",
+                    "username": "dmitry"
+                }
+            ],
+            "description": "Creates nice looking URLs for TYPO3 pages: converts http://example.com/index.phpid12345&L2 to http://example.com/path/to/your/page/. Please, ask for free support in TYPO3 mailing lists or contact the maintainer for paid support.",
+            "time": "2014-02-17 13:13:36"
+        },
+        {
+            "name": "typo3-ter/sr-feuser-register",
+            "version": "3.1.3",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/sr_feuser_register/3.1.3/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.3.0",
+                "typo3-ter/static-info-tables": ">= 2.3.0",
+                "typo3/cms-core": ">= 4.5.0, <= 6.2.99"
+            },
+            "conflict": {
+                "typo3-ter/cc-random-image": "<= 99.99.99",
+                "typo3-ter/germandates": "<= 99.99.99",
+                "typo3-ter/kb-md5fepw": "<= 99.99.99",
+                "typo3-ter/newloginbox": "<= 99.99.99",
+                "typo3-ter/patch1822": "<= 99.99.99",
+                "typo3-ter/rlmp-language-detection": "<= 99.99.99",
+                "typo3-ter/srfeuserregister-t3secsaltedpw": "<= 99.99.99"
+            },
+            "replace": {
+                "sr_feuser_register": "self.version",
+                "typo3-ter/sr_feuser_register": "self.version"
+            },
+            "suggest": {
+                "typo3-ter/sr-freecap": ">= 1.5.3"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Stanislas Rolland / Franz Holzinger",
+                    "email": "typo3@sjbr.ca",
+                    "company": "SJBR",
+                    "username": "stan"
+                }
+            ],
+            "description": "A self-registration variant of Kasper Skrhjs Front End User Admin extension.",
+            "time": "2014-06-25 15:53:18"
+        },
+        {
+            "name": "typo3-ter/static-info-tables",
+            "version": "6.1.0",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/static_info_tables/6.1.0/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.3.7",
+                "typo3/cms-core": ">= 6.0.6, <= 6.2.99"
+            },
+            "conflict": {
+                "typo3-ter/cc-infotablesmgm": "<= 99.99.99",
+                "typo3-ter/sr-static-info": "<= 99.99.99",
+                "typo3-ter/uncache": "<= 99.99.99"
+            },
+            "replace": {
+                "static_info_tables": "self.version",
+                "typo3-ter/static_info_tables": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Stanislas Rolland/Ren Fritz",
+                    "email": "typo3@sjbr.ca",
+                    "company": "SJBR",
+                    "username": "stan"
+                }
+            ],
+            "description": "Data and API for countries, languages and currencies.",
+            "time": "2014-04-23 18:11:14"
+        },
+        {
+            "name": "typo3-ter/templavoila",
+            "version": "1.9.8",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/templavoila/1.9.8/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.3.0",
+                "typo3-ter/static-info-tables": "*",
+                "typo3/cms-core": ">= 4.5.0, <= 6.2.99"
+            },
+            "conflict": {
+                "typo3-ter/eu-tradvoila": "<= 0.0.2",
+                "typo3-ter/kb-tv-clipboard": "<= 0.1.0",
+                "typo3-ter/me-templavoilalayout": "*",
+                "typo3-ter/me-templavoilalayout2": "*",
+                "typo3-ter/templavoila-cw": "<= 0.1.0"
+            },
+            "replace": {
+                "templavoila": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "TYPO3 Release Team",
+                    "email": "typo3v4@typo3.org",
+                    "company": "",
+                    "username": "benni"
+                }
+            ],
+            "description": "Point-and-click, popular and easy template engine for TYPO3. Public free support is provided only through TYPO3 mailing lists! Contact by e-mail for commercial support.",
+            "time": "2015-06-20 14:23:31"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -387,161 +618,176 @@
             },
             "type": "typo3-cms-extension",
             "time": "2014-08-15 09:46:05"
-        },
-        {
-            "name": "typo3cms/news",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/news.git",
-                "reference": "3.0.1"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/realurl",
-            "version": "1.12.8",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/realurl.git",
-                "reference": "1_12_8"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/sr_feuser_register",
-            "version": "3.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/sr_feuser_register.git",
-                "reference": "Version-3-1-3"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/static_info_tables",
-            "version": "6.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/static_info_tables.git",
-                "reference": "Version-6-1-0"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/templavoila",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/templavoila.git",
-                "reference": "2.0.0"
-            },
-            "type": "typo3-cms-extension"
         }
     ],
     "packages-dev": [
         {
-            "name": "typo3cms/devlog",
+            "name": "typo3-ter/devlog",
             "version": "2.11.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/devlog.git",
-                "reference": "9a70b962f555e21e1db3342e9c574df667c63217"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/extension_builder",
-            "version": "6.1-dev",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
-                "reference": "beac07a873edcbb18a7c916724d430309b8ba8f1"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/phpmyadmin",
-            "version": "4.18.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mehrwert/TYPO3-phpMyAdmin.git",
-                "reference": "phpmyadmin_4_18_1"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "typo3cms/phpunit",
-            "version": "3.7.22",
-            "source": {
-                "type": "git",
-                "url": "https://git.typo3.org/TYPO3CMS/Extensions/phpunit.git",
-                "reference": "3.7.22"
-            },
-            "type": "typo3-cms-extension"
-        },
-        {
-            "name": "visay/dockertypo3",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/visay/DockerTYPO3.git",
-                "reference": "bc0f2b18bffd59e70edde93433c45d5234ea59d6"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/visay/DockerTYPO3/zipball/bc0f2b18bffd59e70edde93433c45d5234ea59d6",
-                "reference": "bc0f2b18bffd59e70edde93433c45d5234ea59d6",
-                "shasum": ""
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/devlog/2.11.1/t3x/",
+                "reference": null,
+                "shasum": null
             },
             "require": {
-                "typo3/cms": "*"
+                "typo3/cms-core": ">= 4.5.0, <= 6.2.99"
             },
-            "bin": [
-                "bin/dockertypo3"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
+            "replace": {
+                "devlog": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/ter": {
+                    "review-state": "insecure"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
             "authors": [
                 {
-                    "name": "Visay Keo",
-                    "email": "visay.keo@typo3.org",
-                    "homepage": "http://www.visay.info",
-                    "role": "Developer"
+                    "name": "Rene Fritz, Francois Suter",
+                    "email": "typo3@cobweb.ch",
+                    "company": "",
+                    "username": "francois"
                 }
             ],
-            "description": "Docker Compose structure to quickly startup TYPO3 CMS projects",
-            "time": "2016-10-03 04:24:55"
+            "description": "The Developer log extension provides development logging/debugging functionality for usage of t3lib_div::devlog() and a BE module to browse the logs.",
+            "time": "2014-03-24 09:01:38"
         },
         {
-            "name": "visay/syncontent",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.web-essentials.asia/visay/syncontent.git",
-                "reference": "038b879d93190f5492e168d4d846e5cd139a92b4"
+            "name": "typo3-ter/extension-builder",
+            "version": "6.2.15",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/extension_builder/6.2.15/t3x/",
+                "reference": null,
+                "shasum": null
             },
-            "bin": [
-                "bin/syncontent"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
+            "require": {
+                "typo3/cms-core": ">= 6.2.0, <= 6.2.99"
+            },
+            "replace": {
+                "extension_builder": "self.version",
+                "typo3-ter/extension_builder": "self.version"
+            },
+            "suggest": {
+                "typo3-ter/phpunit": "*"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
             "authors": [
                 {
-                    "name": "Visay Keo",
-                    "email": "visay@web-essentials.asia",
-                    "homepage": "http://www.web-essentials.asia",
-                    "role": "Developer"
+                    "name": "Nico de Haen",
+                    "email": "mail@ndh-websolutions.de",
+                    "company": "",
+                    "username": "nicodh"
                 }
             ],
-            "description": "Fetch site content from remote server to local.",
-            "time": "2016-07-28 06:31:07"
+            "description": "The Extension Builder helps you build and manage your Extbase based TYPO3 extensions.",
+            "time": "2015-11-21 18:38:29"
+        },
+        {
+            "name": "typo3-ter/phpmyadmin",
+            "version": "4.18.1",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/phpmyadmin/4.18.1/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.2.0",
+                "typo3/cms-core": ">= 4.2.0, <= 6.2.99"
+            },
+            "replace": {
+                "phpmyadmin": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/ter": {
+                    "review-state": "insecure"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Andreas Beutel - mehrwert",
+                    "email": "typo3@mehrwert.de",
+                    "company": "mehrwert intermediale kommunikation GmbH",
+                    "username": "mehrwert"
+                }
+            ],
+            "description": "Third party phpMyAdmin administration module. Access to admin-users only. 4.x releases require PHP 5.2, TYPO3 4.2 and MySQL 5. The 3.x branch is still supported: http://www.mehrwert.de/go/t3x",
+            "time": "2014-03-03 16:53:39"
+        },
+        {
+            "name": "typo3-ter/phpunit",
+            "version": "3.7.22",
+            "dist": {
+                "type": "t3x",
+                "url": "https://typo3.org/extensions/repository/download/phpunit/3.7.22/t3x/",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">= 5.3.0",
+                "typo3/cms-core": ">= 4.5.0, <= 6.2.99"
+            },
+            "replace": {
+                "phpunit": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "classmap": [
+                    ""
+                ],
+                "exclude-from-classmap": [
+                    "Migrations",
+                    "Tests",
+                    "tests",
+                    "class.ext_update.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Oliver Klee",
+                    "email": "typo3-coding@oliverklee.de",
+                    "company": "",
+                    "username": "oliklee"
+                }
+            ],
+            "description": "Unit testing for TYPO3. Includes PHPUnit 3.7, Selenium, a BE test runner module, a CLI test runner, PhpStorm integration and a testing framework.",
+            "time": "2013-07-26 23:47:28"
         }
     ],
     "aliases": [],
@@ -549,8 +795,7 @@
     "stability-flags": {
         "typo3cms/fal_dropbox": 20,
         "typo3cms/dropbox_carousel": 20,
-        "typo3cms/football_manager": 20,
-        "typo3cms/extension_builder": 20
+        "typo3cms/football_manager": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
