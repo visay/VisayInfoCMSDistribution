@@ -19,7 +19,7 @@
 		"LGPL-3.0+"
 	],
 	"require" : {
-		"typo3/cms" : "6.2.18",
+		"typo3/cms" : "6.2.29",
 		"typo3cms/static_info_tables" : "6.1.0",
 		"typo3cms/realurl" : "1.12.8",
 		"typo3cms/templavoila" : "2.0.0",

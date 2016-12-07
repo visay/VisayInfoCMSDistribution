@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cd1820660fde9d1ea4fd4c68ce35ac02",
-    "content-hash": "ac33cca4b72428e8a13ffbc7d76619d1",
+    "hash": "5719f827048bdd600b2c795a2a9bba9e",
+    "content-hash": "fb371cfe77db7399f2d994c0fd2b709d",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -131,17 +131,17 @@
         },
         {
             "name": "typo3/cms",
-            "version": "6.2.18",
+            "version": "6.2.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "1d8a0aad7b8e539dd3fba7f494e573df0befc6ea"
+                "reference": "65785680a829f51733dae39113d72879025eb48b"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/1d8a0aad7b8e539dd3fba7f494e573df0befc6ea",
-                "reference": "1d8a0aad7b8e539dd3fba7f494e573df0befc6ea",
-                "shasum": "feb56af83d87cb3bbe8ccac65c2ec28dcbc1c380"
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/65785680a829f51733dae39113d72879025eb48b",
+                "reference": "65785680a829f51733dae39113d72879025eb48b",
+                "shasum": "f50f4f69d2b9aa84aec4afe32841e88cf76f14d0"
             },
             "require": {
                 "doctrine/instantiator": "1.0.5",
@@ -150,8 +150,8 @@
                 "ext-session": "*",
                 "ext-xml": "*",
                 "helhum/class-alias-loader": "1.1.5",
-                "php": ">=5.3.7",
-                "typo3/cms-composer-installers": "1.1.4"
+                "php": "^5.3.7",
+                "typo3/cms-composer-installers": "~1.1.4 || ~1.2.8"
             },
             "replace": {
                 "typo3/cms-about": "self.version",
@@ -214,7 +214,8 @@
             },
             "require-dev": {
                 "mikey179/vfsstream": "1.3.*@dev",
-                "phpunit/phpunit": "~4.7.0"
+                "phpunit/phpunit": "~4.7.0",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "suggest": {
                 "ext-gd": "GDlib/Freetype is required for building images with text (GIFBUILDER) and can also be used to scale images",
@@ -288,24 +289,27 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2016-02-16 10:52:04"
+            "time": "2016-11-22 10:31:52"
         },
         {
             "name": "typo3/cms-composer-installers",
-            "version": "1.1.4",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/CmsComposerInstallers.git",
-                "reference": "aa2dfd2efd323aed1250d63d6400aa064b740624"
+                "reference": "fbd6f65a1a6fa155f59fd3a17577663633733c62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/aa2dfd2efd323aed1250d63d6400aa064b740624",
-                "reference": "aa2dfd2efd323aed1250d63d6400aa064b740624",
+                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/fbd6f65a1a6fa155f59fd3a17577663633733c62",
+                "reference": "fbd6f65a1a6fa155f59fd3a17577663633733c62",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.24 || >1.0.24"
             },
             "replace": {
                 "lw/typo3cms-installers": "*",
@@ -318,7 +322,7 @@
             "extra": {
                 "class": "TYPO3\\CMS\\Composer\\Installer\\Plugin",
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -349,7 +353,7 @@
                 "installer",
                 "typo3"
             ],
-            "time": "2015-06-23 12:32:24"
+            "time": "2016-06-13 13:39:26"
         },
         {
             "name": "typo3cms/dropbox_carousel",
@@ -454,8 +458,7 @@
                 "url": "https://git.typo3.org/TYPO3CMS/Extensions/extension_builder.git",
                 "reference": "beac07a873edcbb18a7c916724d430309b8ba8f1"
             },
-            "type": "typo3-cms-extension",
-            "time": "2014-05-07 09:24:34"
+            "type": "typo3-cms-extension"
         },
         {
             "name": "typo3cms/phpmyadmin",
@@ -479,16 +482,16 @@
         },
         {
             "name": "visay/dockertypo3",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/visay/DockerTYPO3.git",
-                "reference": "49cd225085e52fbfdbacb154cb82dbcf927805b4"
+                "reference": "bc0f2b18bffd59e70edde93433c45d5234ea59d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/visay/DockerTYPO3/zipball/49cd225085e52fbfdbacb154cb82dbcf927805b4",
-                "reference": "49cd225085e52fbfdbacb154cb82dbcf927805b4",
+                "url": "https://api.github.com/repos/visay/DockerTYPO3/zipball/bc0f2b18bffd59e70edde93433c45d5234ea59d6",
+                "reference": "bc0f2b18bffd59e70edde93433c45d5234ea59d6",
                 "shasum": ""
             },
             "require": {
@@ -511,7 +514,7 @@
                 }
             ],
             "description": "Docker Compose structure to quickly startup TYPO3 CMS projects",
-            "time": "2016-08-06 12:54:15"
+            "time": "2016-10-03 04:24:55"
         },
         {
             "name": "visay/syncontent",
